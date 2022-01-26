@@ -1,0 +1,20 @@
+ul {
+    padding-inline: 1rem;
+    list-style-type: none;
+    margin: 0;
+    background-color: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+}
+
+li {
+    color: rgba(255, 255, 255, 0.836);
+    padding: 0.8rem 1.5rem;
+}
+
+li:hover {
+    background-color: rgb(190, 30, 30);
+    cursor: pointer;
+}
