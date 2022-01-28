@@ -6,13 +6,14 @@ import { PagesRoutingModule } from './pages/pages-routing.module';
 
 const routes: Routes = [
   {
-    path: '**',
-    component:NopagefoundComponent
-  },{
 
     path:'',
     redirectTo:'/sistema', pathMatch: 'full'
-  }
+  },
+  {
+    path: '**',
+    component:NopagefoundComponent
+  },
 ];
 
 @NgModule({
