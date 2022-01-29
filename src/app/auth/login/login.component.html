@@ -3,19 +3,20 @@
         <div class="descripcion">
             <h2>Iniciar Sesion</h2>
         </div>
-        <form action="">
+        <form [formGroup]="form" (ngSubmit)="login()">
 
             <div class="input-group">
                 <label for="email">Correo electronico:</label>
-                <input type="email" id="email" class="" placeholder="email">
-
+                <input type="email" id="email" class="" placeholder="email" formControlName="email">
+                <span *ngIf="campoNoValido('email')" class="text-danger">{{emailErrorMsg}}</span>
             </div>
             <div class="input-group">
                 <label for="password">Contraseña:</label>
-                <input type="password" id="password" class="" placeholder="Password">
+                <input type="password" id="password" class="" placeholder="Password" formControlName="password">
+                <span *ngIf="campoNoValido('password')" class="text-danger">{{passwordErrorMsg}}</span>
             </div>
 
-            <button class="btn">Iniciar sesion</button>
+            <button class="btn" type="submit">Iniciar sesion</button>
         </form>
     </div>
 </div>

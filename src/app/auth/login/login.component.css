@@ -10,6 +10,10 @@
     width: 40%;
 }
 
+.text-danger {
+    color: #ff0000;
+}
+
 form {
     border: .1rem solid rgb(4, 91, 172);
     padding: 1rem;
