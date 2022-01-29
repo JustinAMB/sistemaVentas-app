@@ -51,6 +51,13 @@ export class AuthService {
       catchError(err=>of(err.error))
     );
   }
+  validateToken():Observable<boolean>{
+    const url=`${this.baseUrl}user/${this._user.id}`;
+    return this.http.get<Resp>(url,this.headers).pipe(
+      map(resp=>resp.ok),
+      catchError(err=>of(false))
+    );
+  }
   logout(){
     localStorage.removeItem('token');
     
