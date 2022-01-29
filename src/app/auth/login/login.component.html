@@ -16,7 +16,7 @@
                 <span *ngIf="campoNoValido('password')" class="text-danger">{{passwordErrorMsg}}</span>
             </div>
 
-            <button class="btn" type="submit">Iniciar sesion</button>
+            <button class="btn" type="submit" [disabled]="form.invalid">Iniciar sesion</button>
         </form>
     </div>
 </div>

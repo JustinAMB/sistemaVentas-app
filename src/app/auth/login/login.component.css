@@ -31,6 +31,10 @@ form {
     border-radius: .3rem;
 }
 
+.input-group {
+    margin-block: 1rem;
+}
+
 .input-group input {
     width: 100%;
     margin-bottom: 0.5rem;
