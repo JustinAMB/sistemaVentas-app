@@ -13,8 +13,7 @@ import { BrowserModule } from '@angular/platform-browser';
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule,
-    
+    RouterModule,    
     BrowserModule ,
     PagesRoutingModule,
     

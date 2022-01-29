@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ListaProductosComponent } from './lista-productos/lista-productos.component';
 
 const routes: Routes = [{
-  path: 'listado',
+  path: '**',
   component:ListaProductosComponent
 }];
 
