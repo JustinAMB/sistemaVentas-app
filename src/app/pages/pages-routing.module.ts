@@ -17,6 +17,9 @@ const routes: Routes = [
       {
         path:'clientes',
         loadChildren:()=>import('../clientes/clientes.module').then(m=>m.ClientesModule) 
+      },{
+        path:'categorias',
+        loadChildren:()=>import('../category/category.module').then(m=>m.CategoryModule)
       }
       
       
