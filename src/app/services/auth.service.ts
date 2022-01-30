@@ -11,7 +11,7 @@ import {catchError, map, tap} from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private _user:User=this.getUser();
+  private _user!:User
   
   
 
@@ -19,7 +19,7 @@ export class AuthService {
   constructor(private http:HttpClient) { }
   
   get user():User{
-    return this._user;
+    return {...this._user};
   }
 
   get token():string{
@@ -48,6 +48,7 @@ export class AuthService {
           console.log(resp.data.user);
           
           this._user=resp.data.user as User;
+          localStorage.setItem('id',String(this.user.id));
           console.log(this.user);
         }
   
@@ -55,14 +56,18 @@ export class AuthService {
       catchError(err=>{
         console.log(err);
         return of(err.error)
-      }
-        )
+      })  
     );
   }
   validateToken():Observable<boolean>{
-    const url=`${this.baseUrl}user/${this._user.id}`;
+    
+    const id=localStorage.getItem('id') || 0;.7
+    const url=`${this.baseUrl}user/${id}`;
     return this.http.get<Resp>(url,this.headers).pipe(
-      map(resp=>resp.ok),
+      map(resp=>{
+        this._user=resp.data as User;
+        return resp.ok
+      }),
       catchError(err=>of(false))
     );
   }
