@@ -1,0 +1,25 @@
+h2 {
+    font-size: 2.5rem;
+    margin-block: .5rem 3rem;
+}
+
+a {
+    text-decoration: none;
+    padding: .3rem .5rem;
+    border-radius: .2rem;
+    border: .05rem solid rgba(33, 33, 34, 0.562);
+    color: rgb(8, 8, 8);
+    text-align: center;
+    filter: drop-shadow(0 0 2.5rem rgb(24, 23, 23));
+    font-size: 1.2rem;
+    text-align: right;
+}
+
+i {
+    font-size: 1.2rem;
+}
+
+.button-flex {
+    display: flex;
+    justify-content: flex-end;
+}
