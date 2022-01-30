@@ -14,7 +14,7 @@ export class ListCategoryComponent implements OnInit {
   constructor(private categoryService:CategoryService,private router:Router) { }
 
   ngOnInit(): void {
-    this.categoryService.getCategorys().subscribe(
+    this.categoryService.getCategorys(true).subscribe(
       (resp)=>{
         if(resp.ok===true){
           this.categorys=resp.data;
@@ -35,7 +35,7 @@ export class ListCategoryComponent implements OnInit {
 
   }
   edit(id:number){
-    this.router.navigate(['/category/edit/:id',id]);
+    this.router.navigate(['/sistema/categorias/editar-categoria',id]);
   }
 
   delete(id:number){
