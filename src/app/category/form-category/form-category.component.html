@@ -1,1 +1,13 @@
-<h2>{{id ? 'Editar Categoria':'Agregar Categoria'}}</h2>
+<h2>{{id ? 'Editar Categoria':'Nueva Categoria'}}</h2>
+
+
+
+<form [formGroup]="form" (ngSubmit)="save()">
+    <div>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" formControlName="name" />
+        <span *ngIf="campoNoValido('name')" class="text-danger">{{nameErrorMsg}}</span>
+    </div>
+
+    <button [disabled]="form.invalid" type="submit"> {{id ? 'Actualizar':'Agregar'}} categoria</button>
+</form>
