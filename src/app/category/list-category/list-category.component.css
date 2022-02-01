@@ -50,6 +50,7 @@ tbody tr:nth-child(2n+1) {
 button {
     color: #fff;
     padding: .3rem .4rem;
+    border-radius: .3rem;
 }
 
 button:hover {
