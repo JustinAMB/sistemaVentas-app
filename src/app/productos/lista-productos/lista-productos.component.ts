@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Category } from 'src/app/interfaces/category';
 import { Product } from 'src/app/interfaces/product';
+import { CategoryService } from 'src/app/services/category.service';
 import { ProductService } from 'src/app/services/product.service';
 import Swal from 'sweetalert2';
 @Component({
@@ -11,8 +13,16 @@ import Swal from 'sweetalert2';
 export class ListaProductosComponent implements OnInit {
   products!:Product[];
   load:boolean=true;
-  constructor(private router:Router,private productService:ProductService) { }
- 
+  categorias!:Category[];
+  constructor(private router:Router,private productService:ProductService,private categoryService:CategoryService) { }
+  getCategoria(id:number):string{
+    if(this.categorias){
+      const categoria=this.categorias.find((categoria:Category)=>categoria.id===id);
+      return categoria!.name;
+  
+    }
+    return '';
+  }
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe(resp=>{
@@ -29,6 +39,13 @@ export class ListaProductosComponent implements OnInit {
         
       }
     });
+
+
+    this.categoryService.getCategorys(true).subscribe(
+      (resp)=>{
+        this.categorias=resp.data;
+      }
+    );
   }
   edit (id:number){
     this.router.navigate(['/productos/editar-producto',id]);

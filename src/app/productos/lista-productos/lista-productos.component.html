@@ -16,10 +16,11 @@
         <tr *ngFor="let product of products;let i=index">
             <td>{{product.barcode}}</td>
             <td>
-                <img [src]="product.image" alt=" "></td>
+                <img [src]="product.image" alt=" ">
+            </td>
             <td>{{product.name}}</td>
             <td>{{product.price}}</td>
-            <td>{{product.category}}</td>
+            <td>{{getCategoria(product.category)}}</td>
             <td>{{product. inventary_min}}</td>
             <td>
                 <button class="edit " (click)="edit(product.id!) "><i class="uil uil-edit "></i></button>
