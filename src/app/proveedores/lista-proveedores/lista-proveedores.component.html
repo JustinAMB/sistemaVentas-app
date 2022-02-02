@@ -1,1 +1,27 @@
-<p>lista-proveedores works!</p>
+<app-spinner *ngIf="load"></app-spinner>
+<table *ngIf="!load">
+
+    <thead>
+        <tr>
+
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let proveedor of proveedores;let i=index">
+
+            <td>{{proveedor.name+' '+proveedor.lastname}}</td>
+            <td>{{proveedor.email}}</td>
+            <td>{{proveedor.address}}</td>
+            <td>{{proveedor.phone}}</td>
+            <td>
+                <button class="edit" (click)="edit(proveedor.id!)">Editar</button>
+                <button class="delete" (click)="delete(proveedor.id!)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
