@@ -46,4 +46,10 @@ export class PersonService {
     const url=`${this.baseUrl}person/getPersons/${kind}`;
     return this.http.get<Resp>(url,this.headers);
   }
+
+  activePerson(id:number,state:boolean):Observable<Resp> {
+    const url=`${this.baseUrl}person/active/${id}`; 
+    return this.http.put<Resp>(url,{state},this.headers);
+
+  }
 }
