@@ -116,7 +116,7 @@ export class FormClienteComponent implements OnInit {
           }
         });
       }else{
-        this.personService.addPerson(1,data).subscribe(resp=>{
+        this.personService.addPerson(-1,data).subscribe(resp=>{
           if(resp.ok===true){
             Swal.fire('Exito','cliente creado correctamente','success');
             
