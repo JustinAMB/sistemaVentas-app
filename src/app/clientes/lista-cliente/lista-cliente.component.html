@@ -1,1 +1,27 @@
-<p>lista-cliente works!</p>
+<app-spinner *ngIf="load"></app-spinner>
+<table *ngIf="!load">
+
+    <thead>
+        <tr>
+
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Direccion</th>
+            <th>Telefono</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let cliente of clientes">
+
+            <td>{{cliente.name+' '+cliente.lastname}}</td>
+            <td>{{cliente.email}}</td>
+            <td>{{cliente.address}}</td>
+            <td>{{cliente.phone}}</td>
+            <td>
+                <button class="edit" (click)="edit(cliente.id!)">Editar</button>
+                <button class="delete" (click)="delete(cliente.id!)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
