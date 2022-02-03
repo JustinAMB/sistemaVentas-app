@@ -42,8 +42,8 @@ export class PersonService {
     const url=`${this.baseUrl}person/${id}`;
     return this.http.get<Resp>(url,this.headers);
   }
-  getPersons(kind:number):Observable<Resp>{
-    const url=`${this.baseUrl}person/getPersons/${kind}`;
+  getPersons(kind:number,state:boolean=true):Observable<Resp>{
+    const url=`${this.baseUrl}person/getPersons/${kind}?state=${state}`;
     return this.http.get<Resp>(url,this.headers);
   }
 
