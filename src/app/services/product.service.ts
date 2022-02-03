@@ -46,8 +46,8 @@ export class ProductService {
     return this.http.get<Resp>(url,this.headers);
 
   }
-  getProducts():Observable<Resp> {
-    const url=`${this.baseUrl}product/`; 
+  getProducts(state:boolean=true):Observable<Resp> {
+    const url=`${this.baseUrl}product/?is_active=${state}`; 
     return this.http.get<Resp>(url,this.headers);
 
   }
