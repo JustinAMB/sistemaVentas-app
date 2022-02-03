@@ -1,1 +1,32 @@
-<p>form-proveedor works!</p>
+<form [formGroup]="form" (ngSubmit)="save()">
+
+
+    <div>
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" formControlName="name" />
+        <span *ngIf="campoNoValido('name')" class="text-danger">{{nameErrorMsg}}</span>
+    </div>
+    <div>
+        <label for="lastname">Apellido:</label>
+        <input type="text" id="lastname" formControlName="lastname" />
+        <span *ngIf="campoNoValido('lastname')" class="text-danger">{{lastnameErrorMsg}}</span>
+    </div>
+    <div>
+        <label for="address">Direccion:</label>
+        <input type="text" id="address" formControlName="address" />
+        <span *ngIf="campoNoValido('address')" class="text-danger">{{addressErrorMsg}}</span>
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" />
+        <span *ngIf="campoNoValido('email')" class="text-danger">{{emailErrorMsg}}</span>
+    </div>
+    <div>
+        <label for="phone">Telefono:</label>
+        <input type="tel" id="phone" formControlName="phone" />
+        <span *ngIf="campoNoValido('phone')" class="text-danger">{{phoneErrorMsg}}</span>
+    </div>
+
+
+    <button [disabled]="form.invalid" type="submit"> {{id ? 'Actualizar':'Agregar'}} proveedor </button>
+</form>
