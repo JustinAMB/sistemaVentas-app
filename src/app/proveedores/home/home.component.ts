@@ -39,7 +39,7 @@ export class HomeComponent implements OnInit {
     console.log(this.extractData(this.persons));
     const pdf = new PdfMakeWrapper();
     const fecha = new Txt(this.getDate()).alignment('right').end;
-    const title=new Txt('Lista de proveedores').alignment('center').bold().end
+    const title=new Txt('Lista de proveedores').alignment('center').bold().margin([50,50,50,0]).fontSize(18).end
     pdf.add(fecha);
     pdf.add(title);
     pdf.add(this.
@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit {
         },
         
       }
-    ).end;
+    ).alignment('center').margin([25,25]).end;
   }
 
   extractData(data:PersonData[]):TableRow[]{
