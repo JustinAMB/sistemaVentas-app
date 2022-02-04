@@ -3,8 +3,8 @@
     <h2>Directorio de proveedores</h2>
     <div>
         <button routerLink="/sistema/proveedores/agregar-proveedor">Nuevo Proveedor</button>
-        <button>Imprimir</button>
+        <button (click)="imprimir()">Imprimir</button>
     </div>
 </div>
-<app-lista-proveedores>
+<app-lista-proveedores id="lista">
 </app-lista-proveedores>
