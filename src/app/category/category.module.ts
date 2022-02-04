@@ -6,6 +6,7 @@ import { ListCategoryComponent } from './list-category/list-category.component';
 import { HomeComponent } from './home/home.component';
 import { FormCategoryComponent } from './form-category/form-category.component';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     SharedModule,
     CategoryRoutingModule
   ]
