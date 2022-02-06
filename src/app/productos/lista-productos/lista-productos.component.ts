@@ -48,7 +48,7 @@ export class ListaProductosComponent implements OnInit {
     );
   }
   edit (id:number){
-    this.router.navigate(['/productos/editar-producto',id]);
+    this.router.navigate(['/sistema/productos/editar-producto',id]);
   }
 
 
