@@ -6,6 +6,7 @@ import { ProductosComponent } from './productos.component';
 import { ListaProductosComponent } from './lista-productos/lista-productos.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormProductoComponent } from './form-producto/form-producto.component';
+import { PipesModule } from '../pipes/pipes.module';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { FormProductoComponent } from './form-producto/form-producto.component';
   imports: [
     CommonModule,
     SharedModule,
+    PipesModule,
     ProductosRoutingModule
   ]
 })
