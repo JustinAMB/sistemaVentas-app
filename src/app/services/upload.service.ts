@@ -28,8 +28,8 @@ export class UploadService {
   upload(file:File,type:string):Observable<Resp> {
     const url=`${this.baseUrl}upload/${type}`; 
     const formData=new FormData();
-    formData.append('image',file);
-    return this.http.post<Resp>(url,formData,this.headers);
+    formData.append('imagen',file);
+    return this.http.put<Resp>(url,formData,this.headers);
 
   }
 }

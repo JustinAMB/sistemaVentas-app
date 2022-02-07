@@ -21,7 +21,18 @@ const routes: Routes = [
         path:'categorias',
         loadChildren:()=>import('../category/category.module').then(m=>m.CategoryModule)
       }
-      
+      ,{
+
+        path:'usuarios',
+        loadChildren:()=>import('../users/users.module').then(m=>m.UsersModule)
+      }
+      ,{
+        path:'proveedores',
+        loadChildren:()=>import('../proveedores/proveedores.module').then(m=>m.ProveedoresModule)
+      },{
+        path:'ventas',
+        loadChildren:()=>import('../ventas/ventas.module').then(m=>m.VentasModule)
+      }
       
     ]
   }

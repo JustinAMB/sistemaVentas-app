@@ -4,10 +4,17 @@ import { CommonModule } from '@angular/common';
 import { ClientesRoutingModule } from './clientes-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { FormClienteComponent } from './form-cliente/form-cliente.component';
+import { ListaClienteComponent } from './lista-cliente/lista-cliente.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HomeComponent,
+    FormClienteComponent,
+    ListaClienteComponent
+  ],
   imports: [
     CommonModule,
     ReactiveFormsModule,

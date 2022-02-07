@@ -9,6 +9,10 @@ ul {
     flex-direction: row;
 }
 
+nav {
+    width: 100%;
+}
+
 li {
     color: rgba(255, 255, 255, 0.836);
     padding: 0.8rem 1.5rem;
@@ -17,4 +21,15 @@ li {
 li:hover {
     background-color: rgb(190, 30, 30);
     cursor: pointer;
+}
+
+:host {
+    display: flex;
+}
+
+.container {
+    margin-top: 1rem !important;
+    max-width: 90%;
+    width: 90%;
+    margin: 0 auto;
 }

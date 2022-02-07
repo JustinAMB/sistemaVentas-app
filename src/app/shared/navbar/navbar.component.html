@@ -1,14 +1,15 @@
 <nav>
-    <ul>
-        <li>Inicio</li>
+    <ul class="">
+
+        <li (click)="navegar('/')">Inicio</li>
         <li>Vender</li>
         <li>Ventas</li>
         <li>Caja</li>
-        <li>Productos</li>
-        <li>Categorias</li>
-        <li>Clientes</li>
-        <li>Proveedores</li>
+        <li (click)="navegar('/sistema/productos/')">Productos</li>
+        <li (click)="navegar('/sistema/categorias/')">Categorias</li>
+        <li (click)="navegar('/sistema/clientes/')">Clientes</li>
+        <li (click)="navegar('/sistema/proveedores/')">Proveedores</li>
         <li>Inventario</li>
-        <li>Usuarios</li>
+        <li (click)="navegar('/sistema/usuarios/')">Usuarios</li>
     </ul>
 </nav>

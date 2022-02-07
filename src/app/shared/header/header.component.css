@@ -2,5 +2,12 @@ header {
     margin-top: 0;
     color: rgba(255, 255, 255, 0.548);
     background-color: #000;
-    padding: .5rem 3.5rem;
+    padding-inline: 3.5rem;
+    min-width: 100%;
+    max-width: 200vw;
+}
+
+:host {
+    display: flex;
+    min-width: 100%;
 }
