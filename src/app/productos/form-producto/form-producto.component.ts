@@ -129,12 +129,12 @@ export class FormProductoComponent implements OnInit {
       product.id=this.id;
       this.productService.editproduct(product).subscribe(resp=>{
         console.log(resp);
-        this.router.navigate(['/productos']);
+        this.router.navigate(['/sistema/productos']);
       });
     }else{
       this.productService.addProduct(product).subscribe(resp=>{
         console.log(resp);
-        this.router.navigate(['/productos']);
+        this.router.navigate(['/sistema/productos']);
       });
     }
   }
