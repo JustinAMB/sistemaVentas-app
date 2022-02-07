@@ -36,6 +36,9 @@ export class FormProductoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.categoryService.getCategorys(true).subscribe(resp=>{
+      this.categories=resp.data;
+    });
     if (!this.router.url.includes('editar')) {
       console.log('editar2');
       return;
@@ -48,6 +51,7 @@ export class FormProductoComponent implements OnInit {
       this.form.patchValue(resp.data);
       this.imgUrl=resp.data.image;
     });
+    
   }
   campoNoValido( campo: string ) {
     return this.form.get(campo)?.invalid
