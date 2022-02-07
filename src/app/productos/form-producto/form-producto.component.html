@@ -8,40 +8,49 @@
             <input type="text" id="name" formControlName="name" />
             <span *ngIf="campoNoValido('name')" class="text-danger">{{nameErrorMsg}}</span>
         </div>
-        <div>
-            <label for="barcode">codigo de barras:</label>
-            <input type="text" id="barcode" formControlName="barcode" />
-            <span *ngIf="campoNoValido('barcode')" class="text-danger">{{barcodeErrorMsg}}</span>
-        </div>
-        <div>
-            <label for="price">precio:</label>
-            <input type="number" id="barcode" formControlName="price" />
-            <span *ngIf="campoNoValido('price')" class="text-danger">{{priceErrorMsg}}</span>
-        </div>
 
-        <div>
-            <label for="unit">unidad:</label>
-            <input type="text" id="unit" formControlName="unit" />
-            <span *ngIf="campoNoValido('price')" class="text-danger">{{unitErrorMsg}}</span>
-        </div>
-        <div>
-            <label for="inventary_min">inventario minimo:</label>
-            <input type="text" id="inventary_min" formControlName="inventary_min" />
-            <span *ngIf="campoNoValido('inventary_min')" class="text-danger">{{inventaryErrorMsg}}</span>
+
+
+        <div class="grid-form">
+            <div>
+                <label for="barcode">codigo de barras:</label>
+                <input type="text" id="barcode" formControlName="barcode" />
+                <span *ngIf="campoNoValido('barcode')" class="text-danger">{{barcodeErrorMsg}}</span>
+            </div>
+            <div>
+                <label for="price">precio:</label>
+                <input type="number" id="barcode" formControlName="price" />
+                <span *ngIf="campoNoValido('price')" class="text-danger">{{priceErrorMsg}}</span>
+            </div>
         </div>
         <div>
             <label for="category">Categoria:</label>
-            <select name="category" id="category" formControlName="inventary_min">
+            <select name="category" id="category" formControlName="category">
                 <option value="">Seleccione una categoria</option>
                 <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
             </select>
             <span *ngIf="campoNoValido('category')" class="text-danger">{{categoryErrorMsg}}</span>
         </div>
+
+        <div class="grid-form">
+            <div>
+                <label for="unit">unidad:</label>
+                <input type="text" id="unit" formControlName="unit" />
+                <span *ngIf="campoNoValido('price')" class="text-danger">{{unitErrorMsg}}</span>
+            </div>
+            <div>
+                <label for="inventary_min">inventario minimo:</label>
+                <input type="text" id="inventary_min" formControlName="inventary_min" />
+                <span *ngIf="campoNoValido('inventary_min')" class="text-danger">{{inventaryErrorMsg}}</span>
+            </div>
+        </div>
+
+
         <div>
             <input type="file" class="inputfile" (change)="upload($event)" id="imagen" accept="image/*">
             <label for="imagen" class="label">&nbsp; <i class="uil uil-upload-alt"></i>&nbsp;Agregar Imagen</label>
         </div>
-
+        <button [disabled]="form.invalid" type="submit"> {{id ? 'Actualizar':'Agregar'}} producto </button>
     </form>
 
     <div>

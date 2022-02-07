@@ -8,10 +8,9 @@
 }
 
 .inputfile+label {
-    font-size: 1em;
     font-weight: 700;
-    color: rgb(228, 66, 66);
-    background-color: rgb(255, 255, 255);
+    color: #fff;
+    background-color: #542396;
     display: block;
     padding: 0.5rem;
     width: calc(100% - 2px);
@@ -21,15 +20,76 @@
 
 .inputfile:focus+label,
 .inputfile+label:hover {
-    background-color: rgb(0, 255, 55);
+    background-color: #7829E3;
+}
+
+.label {
+    text-align: center;
+    font-size: 1rem;
 }
 
 .uil {
-    font-size: 1.5rem;
+    text-align: center;
+    font-size: 1rem;
 }
 
 .grid-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: .5rem;
+}
+
+.text-danger {
+    color: #ff0000;
+}
+
+input {
+    width: 100%;
+    border: .1rem solid #ccc;
+    padding: .5rem;
+    margin-bottom: .5rem;
+}
+
+button {
+    margin-top: .5rem;
+    padding: .5rem .8rem;
+    background-color: rgb(14, 18, 243);
+    color: #fff;
+    border: .1rem solid rgb(14, 18, 243);
+    border-radius: .3rem;
+    outline: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: .5;
+}
+
+button:hover:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: #ccc;
+}
+
+select {
+    width: 100%;
+    border: .1rem solid #ccc;
+    padding: .5rem;
+    margin-bottom: .5rem;
+}
+
+img {
+    max-height: 25rem;
+    display: block;
+    max-width: 100%;
 }
