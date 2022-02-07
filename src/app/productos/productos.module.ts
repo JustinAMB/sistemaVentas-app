@@ -7,6 +7,7 @@ import { ListaProductosComponent } from './lista-productos/lista-productos.compo
 import { SharedModule } from '../shared/shared.module';
 import { FormProductoComponent } from './form-producto/form-producto.component';
 import { PipesModule } from '../pipes/pipes.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { PipesModule } from '../pipes/pipes.module';
     CommonModule,
     SharedModule,
     PipesModule,
+    ReactiveFormsModule,
     ProductosRoutingModule
   ]
 })
