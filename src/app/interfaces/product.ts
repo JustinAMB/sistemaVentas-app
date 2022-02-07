@@ -6,7 +6,7 @@ export interface Product {
     barcode:string;
     price:number;
     inventary_min:number;
-    inventary:number;
+    inventary?:number;
     category:number;
     unit:string;
 }
