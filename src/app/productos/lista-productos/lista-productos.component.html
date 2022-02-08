@@ -16,7 +16,7 @@
         <tr *ngFor="let product of products;let i=index">
             <td>{{product.barcode}}</td>
             <td>
-                <img [src]="product.image" alt=" ">
+                <img [src]="product.image! | imagen:'products'" alt=" ">
             </td>
             <td>{{product.name}}</td>
             <td>{{product.price}}</td>
