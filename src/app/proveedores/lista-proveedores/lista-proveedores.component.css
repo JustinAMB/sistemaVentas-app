@@ -52,3 +52,7 @@ button {
 button:hover {
     cursor: pointer;
 }
+
+.foot {
+    background-color: #B3B3B3;
+}
