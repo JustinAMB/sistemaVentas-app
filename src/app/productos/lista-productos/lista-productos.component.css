@@ -55,4 +55,5 @@ button:hover {
 
 img {
     width: 5rem;
+    max-height: 3rem;
 }
