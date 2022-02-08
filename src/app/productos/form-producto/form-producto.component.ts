@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap, tap } from 'rxjs/operators';
 import { Category } from 'src/app/interfaces/category';
+import { Product } from 'src/app/interfaces/product';
 import { CategoryService } from 'src/app/services/category.service';
 import { ProductService } from 'src/app/services/product.service';
 import { UploadService } from 'src/app/services/upload.service';
@@ -19,11 +20,12 @@ export class FormProductoComponent implements OnInit {
   form:FormGroup=this.fb.group({
     name:['',[Validators.required,Validators.minLength(3)]],
     price:['',[Validators.required,Validators.min(0)]],
-    description:['',[Validators.required,Validators.minLength(10)]],
+    
     category:['',[Validators.required]],
     inventary_min:[1,[Validators.required,Validators.min(1)]],
     barcode:['',[Validators.required,Validators.minLength(8)]],
     unit:['',[Validators.required]],
+    
   })
   constructor(
     private uploadService: UploadService,
@@ -76,15 +78,7 @@ export class FormProductoComponent implements OnInit {
     }
     return '';
   }
-  get descriptionErrorMsg(): string {
-    const errors= this.form.get('description')?.errors;
-    if(errors?.required){
-      return 'Debe ingresar una descripcion';
-    } else if(errors?.minlength){
-      return 'La descripcion debe de tener como minimo 10 caracteres';
-    }
-    return '';
-  }
+  
   get barcodeErrorMsg(): string {
     const errors= this.form.get('barcode')?.errors;
     if(errors?.required){
@@ -111,6 +105,15 @@ export class FormProductoComponent implements OnInit {
     }
     return '';
   }
+  get imageErrorMsg(): string {
+    const errors= this.form.get('imagen')?.errors;
+
+    if(errors?.image){
+      
+      return 'Debe seleccionar una imagen';
+    }
+    return '';
+  }
   get unitErrorMsg(): string {
     const errors= this.form.get('unit')?.errors;
     if(errors?.required){
@@ -122,7 +125,7 @@ export class FormProductoComponent implements OnInit {
     if(this.form.invalid){
       return;
     }
-    const product=this.form.value;
+    const product=this.form.value as Product;
     product.image=this.imgUrl;
     console.log(product);
     if(this.router.url.includes('editar')){
@@ -141,15 +144,20 @@ export class FormProductoComponent implements OnInit {
   upload(event:any) {
     // Get input file
     const file = event.target.files[0];
-
+   
     this.uploadService.upload(file,'products').subscribe(resp=>{
       console.log(resp);
       this.imgUrl=resp.data;
-
+      
     });
 
     
+
+
   }
+
+
+  
 
   
 
