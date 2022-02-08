@@ -49,11 +49,12 @@
         <div>
             <input type="file" class="inputfile" (change)="upload($event)" id="imagen" accept="image/*">
             <label for="imagen" class="label">&nbsp; <i class="uil uil-upload-alt"></i>&nbsp;Agregar Imagen</label>
+            <span *ngIf="!imgUrl" class="text-danger">Debe seleccionar una imagen</span>
         </div>
-        <button [disabled]="form.invalid" type="submit"> {{id ? 'Actualizar':'Agregar'}} producto </button>
+        <button disabled={{form.invalid || !imgUrl}} type="submit "> {{id ? 'Actualizar':'Agregar'}} producto </button>
+
+
     </form>
 
-    <div>
-        <img [src]="imgUrl | imagen:'products'">
-    </div>
+
 </div>
