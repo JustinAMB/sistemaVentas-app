@@ -1,0 +1,54 @@
+<h2>
+    {{id ? 'Editar ':'Nuevo '}} Usuario
+</h2>
+<div class="grid-form">
+    <form [formGroup]="form" (ngSubmit)="save()">
+        <div>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" formControlName="name" />
+            <span *ngIf="campoNoValido('name')" class="text-danger">{{nameErrorMsg}}</span>
+        </div>
+
+
+
+
+        <div>
+            <label for="lastname">apellido:</label>
+            <input type="text" id="lastname" formControlName="lastname" />
+            <span *ngIf="campoNoValido('lastname')" class="text-danger">{{lastnameErrorMsg}}</span>
+        </div>
+        <div>
+            <label for="rol">Rol:</label>
+            <select name="rol" id="rol" formControlName="rol">
+                <option value="">Seleccione un rol</option>
+                <option value="1">Admin</option>
+                <option value="2">Empleado</option>
+                
+            </select>
+            <span *ngIf="campoNoValido('rol')" class="text-danger">{{rolErrorMsg}}</span>
+        </div>
+        <div>
+            <label for="email">email:</label>
+            <input type="email" id="email" formControlName="email" />
+            <span *ngIf="campoNoValido('email')" class="text-danger">{{emailErrorMsg}}</span>
+        </div>
+
+
+
+
+
+        <div>
+            <input type="file" class="inputfile" (change)="upload($event)" id="imagen" accept="image/*">
+            <label for="imagen" class="label">&nbsp; <i class="uil uil-upload-alt"></i>&nbsp;Agregar Imagen</label>
+            <span *ngIf="!imgUrl" class="text-danger">Debe seleccionar una imagen</span>
+        </div>
+        <button disabled={{form.invalid || !imgUrl}} type="submit "> {{id ? 'Actualizar':'Agregar'}} usuario </button>
+
+
+    </form>
+    <div>
+        <img [src]="imgUrl | imagen: 'users'">
+    </div>
+
+
+</div>
