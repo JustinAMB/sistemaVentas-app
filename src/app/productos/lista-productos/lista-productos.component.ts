@@ -25,6 +25,11 @@ export class ListaProductosComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.categoryService.getCategorys(true).subscribe(
+      (resp)=>{
+        this.categorias=resp.data;
+      }
+    );
     this.productService.getProducts().subscribe(resp=>{
       if(resp.ok===true){
         this.products=resp.data as Product[];
@@ -41,11 +46,7 @@ export class ListaProductosComponent implements OnInit {
     });
 
 
-    this.categoryService.getCategorys(true).subscribe(
-      (resp)=>{
-        this.categorias=resp.data;
-      }
-    );
+    
   }
   edit (id:number){
     this.router.navigate(['/sistema/productos/editar-producto',id]);
