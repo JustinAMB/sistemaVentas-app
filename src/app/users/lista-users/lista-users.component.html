@@ -1,0 +1,28 @@
+<app-spinner *ngIf="load"></app-spinner>
+<table *ngIf="!load">
+
+    <thead>
+        <tr>
+
+            <th>Nombre</th>
+            <th>Email</th>
+            <th>Rol</th>
+            <th>Foto</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let user of users">
+
+            <td>{{user.name+' '+user.lastname}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.rol}}</td>
+            <td><img [src]="user.image! | imagen:'users'" alt=" "></td>
+            <td>
+                <button class="edit" (click)="edit(user.id!)">Editar</button>
+                <button class="delete" (click)="delete(user.id!)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+
+</table>
