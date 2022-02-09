@@ -157,7 +157,9 @@ export class FormProductoComponent implements OnInit {
   }
 
 
-  
+  get invalid():boolean{
+    return (this.form.invalid ||  !this.imgUrl);
+  }
 
   
 
