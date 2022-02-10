@@ -30,7 +30,7 @@ export class ListaUsersComponent implements OnInit {
     });
   }
   edit (id:number){
-    this.router.navigate(['/sistema/users/editar-user',id]);
+    this.router.navigate(['/sistema/usuarios/editar-usuario',id]);
   }
 
   delete(id:number){
