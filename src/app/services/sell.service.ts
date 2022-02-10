@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { catchError, delay } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Resp } from '../interfaces/resp';
 import { Sell } from '../interfaces/sell';
@@ -29,7 +30,14 @@ export class SellService {
 
   addSell(kind:number,sell:Sell,details:SellDetail[]):Observable<Resp> {
     const url=`${this.baseUrl}sell/${kind}`; 
-    return this.http.post<Resp>(url,{...sell,details},this.headers);
+    return this.http.post<Resp>(url,{...sell,details},this.headers).pipe(
+      catchError(err=>{
+        console.log(err);
+        return of(err.error)
+      })  ,
+
+      delay(1500)
+    );
   }
 
   
