@@ -42,12 +42,12 @@
             <label for="imagen" class="label">&nbsp; <i class="uil uil-upload-alt"></i>&nbsp;Agregar Imagen</label>
             <span *ngIf="!imgUrl" class="text-danger">Debe seleccionar una imagen</span>
         </div>
-        <button disabled={{form.invalid || !imgUrl}} type="submit "> {{id ? 'Actualizar':'Agregar'}} usuario </button>
+        <button [disabled]="invalid" ype="submit "> {{id ? 'Actualizar':'Agregar'}} usuario </button>
 
 
     </form>
     <div>
-        <img [src]="imgUrl | imagen: 'users'">
+        <img [src]="imgUrl | imagen: 'users' ">
     </div>
 
 

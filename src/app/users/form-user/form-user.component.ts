@@ -109,5 +109,7 @@ export class FormUserComponent implements OnInit {
       });
     }
   }
-
+  get invalid():boolean{
+    return (this.form.invalid ||  !this.imgUrl);
+  }
 }
