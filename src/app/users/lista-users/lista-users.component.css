@@ -52,3 +52,8 @@ button {
 button:hover {
     cursor: pointer;
 }
+
+img {
+    width: 5rem;
+    max-height: 3rem;
+}
