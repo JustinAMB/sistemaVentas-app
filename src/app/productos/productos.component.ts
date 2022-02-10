@@ -52,7 +52,7 @@ export class ProductosComponent implements OnInit {
         },
         
       }
-    ).alignment('center').margin([25,25]).end;
+    ).alignment('center').margin([90,20,0,0]).end;
   }
   getDate():string{
     const tiempoTranscurrido:number = Date.now();
