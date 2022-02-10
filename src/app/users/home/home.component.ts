@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
         },
         
       }
-    ).alignment('center').margin([25,25]).end;
+    ).alignment('center').margin([90,20,0,0]).end;
   }
   extractData():TableRow[]{
     return this.users.map((user)=>[user.name+' '+user.lastname,user.email,this.getRol(user.rol)]);
