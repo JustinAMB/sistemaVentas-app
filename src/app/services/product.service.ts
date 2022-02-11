@@ -94,7 +94,7 @@ export class ProductService {
         return of(err.error)
       })  ,
 
-      delay(1000)
+      delay(800)
     );
 
   }
