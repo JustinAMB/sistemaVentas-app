@@ -32,6 +32,10 @@ const routes: Routes = [
       },{
         path:'ventas',
         loadChildren:()=>import('../ventas/ventas.module').then(m=>m.VentasModule)
+      },
+      {
+        path:'inventario',
+        loadChildren:()=>import('../inventario/inventario.module').then(m=>m.InventarioModule)
       }
       
     ]
