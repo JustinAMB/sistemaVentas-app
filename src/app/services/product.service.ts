@@ -87,7 +87,7 @@ export class ProductService {
   }
 
   searchInventary(term:string=''):Observable<Resp> {
-    const url=`${this.baseUrl}product/searchInventary?term=${term}`; 
+    const url=`${this.baseUrl}product/searchInventary/?term=${term}`; 
     return this.http.get<Resp>(url,this.headers).pipe(
       catchError(err=>{
         console.log(err);
