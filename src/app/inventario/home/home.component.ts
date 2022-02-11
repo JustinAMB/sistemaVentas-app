@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
     this.getProduct();
   }
   getProduct(){
+    this.products=[];
     this.load=true;
     this.productService.searchInventary(this.productS).subscribe(resp=>{
       if(resp.ok===true){

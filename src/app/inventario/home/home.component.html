@@ -1,9 +1,9 @@
-<h2>Inventario
+<h2 class="title">Inventario
 </h2>
 <h3>Buscar producto por codigo o nombre</h3>
 <input type="text" (input)="buscar()" [(ngModel)]="productS">
 <button (click)="buscar()">Buscar</button>
-<h2>Resultados de la busqueda</h2>
+<h2 class="title-result">{{'Resultados de la busqueda' | titlecase}}</h2>
 <app-spinner *ngIf="load"></app-spinner>
 <app-lista-inventario [productos]="products" *ngIf="!load">
 
