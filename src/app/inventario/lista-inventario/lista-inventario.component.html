@@ -1,1 +1,24 @@
-<p>lista-inventario works!</p>
+<app-spinner *ngIf="!productos">
+</app-spinner>
+<table *ngIf="productos">
+
+    <thead>
+        <tr>
+
+            <th>Codigo</th>
+            <th>Nombre</th>
+            <th>Precio unitario</th>
+            <th>Unidad</th>
+            <th>Stock</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let producto of productos">
+            <td>{{producto.barcode}}</td>
+            <td>{{producto.name}}</td>
+            <td>{{producto.price}}</td>
+            <td>{{producto.unit}}</td>
+            <td>{{producto.inventary}}</td>
+        </tr>
+    </tbody>
+</table>
