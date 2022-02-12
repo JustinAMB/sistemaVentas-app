@@ -16,5 +16,8 @@ export class ListaComprasComponent implements OnInit {
   get details(): SellDetail[] {
     return this.detailsService.details;
   }
+  delete(index:number){
+    this.detailsService.deleteDetail(index);
+  }
 
 }
