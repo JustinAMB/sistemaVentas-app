@@ -66,6 +66,7 @@ export class FormDetalleComponent implements OnInit {
         product:this.product,
         name:this.name
       }
+      console.log(detail);
         this.detailsService.addDetail(detail);
         this.form.reset();
     }

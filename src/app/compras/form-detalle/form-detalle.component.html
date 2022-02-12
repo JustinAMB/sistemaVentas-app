@@ -1,7 +1,7 @@
 <form [formGroup]="form" (ngSubmit)="add()">
     <div>
         <label for="barcode">Codigo de barras:</label>
-        <input type="text" formControlName="barcode" id="barcode">
+        <input type="text" formControlName="barcode" id="barcode" (input)="codigoExiste()">
         <span *ngIf="campoNoValido('barcode')" class="text-danger">{{barcodeErrorMsg}}</span>
     </div>
     <div>
