@@ -12,6 +12,7 @@ import { SellDetailsService } from 'src/app/services/sell-details.service';
 })
 export class FormDetalleComponent implements OnInit {
   product!:number;
+  name!:string;
   details:SellDetail[]=[];
   form:FormGroup=this.fb.group({
     quantity:[0,[Validators.required,Validators.min(1)]],
@@ -62,7 +63,9 @@ export class FormDetalleComponent implements OnInit {
     if(this.form.valid){
       const detail:SellDetail={
         ...this.form.value,
-        product:this.product}
+        product:this.product,
+        name:this.name
+      }
         this.detailsService.addDetail(detail);
         this.form.reset();
     }
@@ -75,6 +78,7 @@ export class FormDetalleComponent implements OnInit {
       const rs=resp.data?.find((p:Product)=>p.barcode==code);
       if(rs){
         this.product=rs.id;
+        this.name=rs.name;
       }else{
         this.form.get('barcode')?.setErrors({code:true});
       }
