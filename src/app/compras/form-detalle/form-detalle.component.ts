@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Product } from 'src/app/interfaces/product';
 import { SellDetail } from 'src/app/interfaces/sell-detail';
 import { ProductService } from 'src/app/services/product.service';
 import { SellDetailsService } from 'src/app/services/sell-details.service';
@@ -10,6 +11,7 @@ import { SellDetailsService } from 'src/app/services/sell-details.service';
   styleUrls: ['./form-detalle.component.css']
 })
 export class FormDetalleComponent implements OnInit {
+  product!:number;
   details:SellDetail[]=[];
   form:FormGroup=this.fb.group({
     quantity:[0,[Validators.required,Validators.min(1)]],
@@ -49,11 +51,41 @@ export class FormDetalleComponent implements OnInit {
       return 'Debe ingresar un código de barras';
     } else if(errors?.minLength){
       return 'El código de barras debe tener 8 caracteres';
+    }else if(errors?.code){
+      return 'El código de barras no existe';
+
     }
     return '';
   }
   add(){
-    const detail:SellDetail={
-      ...this.form.value}
+    this.form.markAllAsTouched();
+    if(this.form.valid){
+      const detail:SellDetail={
+        ...this.form.value,
+        product:this.product}
+        this.detailsService.addDetail(detail);
+        this.form.reset();
+    }
+   
   }
+
+  codigoExiste(){
+    const code=this.form.get('barcode')?.value;
+    this.productService.getProducts(true).subscribe(resp=>{
+      const rs=resp.data?.find((p:Product)=>p.barcode==code);
+      if(rs){
+        this.product=rs.id;
+      }else{
+        this.form.get('barcode')?.setErrors({code:true});
+      }
+
+    });
+
+  }
+  
+    
+    
+     
+    
+  
 }
