@@ -4,4 +4,5 @@ export interface SellDetail {
     product:number;
     priceUnit :number;
     quantity:number;
+    name?:string;
 }
