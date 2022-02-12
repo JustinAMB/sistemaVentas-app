@@ -1,1 +1,19 @@
-<p>form-detalle works!</p>
+<form [formGroup]="form" (ngSubmit)="add()">
+    <div>
+        <label for="barcode">Codigo de barras:</label>
+        <input type="text" formControlName="barcode" id="barcode">
+        <span *ngIf="campoNoValido('barcode')" class="text-danger">{{barcodeErrorMsg}}</span>
+    </div>
+    <div>
+        <label for="quantity">Cantidad:</label>
+        <input type="number" formControlName="quantity" id="quantity">
+        <span *ngIf="campoNoValido('quantity')" class="text-danger">{{quantityErrorMsg}}</span>
+    </div>
+    <div>
+        <label for="priceUnit">Precio Unitario:</label>
+        <input type="number" formControlName="priceUnit" id="priceUnit">
+        <span *ngIf="campoNoValido('priceUnit')" class="text-danger">{{priceUnitErrorMsg}}</span>
+    </div>
+    <button [disabled]="form.invalid" type="submit">Agregar</button>
+
+</form>
