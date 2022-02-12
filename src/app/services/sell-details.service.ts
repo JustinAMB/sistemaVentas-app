@@ -5,7 +5,7 @@ import { SellDetail } from '../interfaces/sell-detail';
   providedIn: 'root'
 })
 export class SellDetailsService {
-    _details: SellDetail[] =[];
+  private _details: SellDetail[] =[];
   get details(): SellDetail[] {
     return [...this._details];
   }
@@ -15,5 +15,9 @@ export class SellDetailsService {
   }
   deleteDetail(index: number) {
     this._details.splice(index, 1);
+  }
+  get total():number {
+    return this._details.reduce((total,detail)=>total+detail.priceUnit*detail.quantity,0);
+
   }
 }
