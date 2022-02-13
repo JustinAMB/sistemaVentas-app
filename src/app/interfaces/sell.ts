@@ -1,6 +1,6 @@
 export interface Sell {
     id?:number;
-    person:number;
+    person?:number;
     created?:Date;
     user:number;
     total:number;
