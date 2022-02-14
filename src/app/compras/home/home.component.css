@@ -17,6 +17,12 @@
                         transform: scale(1.1);
                     }
                     
+                    .grid-btn {
+                        display: flex;
+                        justify-content: center;
+                        width: 40%;
+                    }
+                    
                     .grid-btn button:nth-child(1) {
                         /**btn danger*/
                         color: #ff0000;
