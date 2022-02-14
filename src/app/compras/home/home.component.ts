@@ -28,5 +28,8 @@ export class HomeComponent implements OnInit {
     });
 
   }
+  cancelar(){
+    this.detailsService.clear();
+  }
 
 }
