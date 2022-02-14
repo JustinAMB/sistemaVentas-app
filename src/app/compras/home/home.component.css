@@ -82,9 +82,11 @@
                     
                     .container-input input {
                         width: 100%;
-                        border: .1rem solid #ccc;
-                        padding: .5rem;
-                        margin-bottom: .5rem;
+                        box-sizing: border-box;
+                        padding: 0.5rem 0.3rem;
+                        margin-bottom: 0.5rem;
+                        border: 1px solid #ccc;
+                        border-radius: 0.25rem;
                     }
                     
                     .container-text {
