@@ -17,12 +17,12 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  get total():number{
+  get total():number[]{
     return this.detailsService.total;
   }
 
   comprar(){	
-    this.sellService.addSell(1,this.total,this.correo,this.detailsService.details).subscribe((resp)=>{
+    this.sellService.addSell(1,this.total[2],this.correo,this.detailsService.details).subscribe((resp)=>{
       Swal.fire('Compra realizada','','success');
 
     });
