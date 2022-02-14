@@ -1,12 +1,16 @@
 <app-form-detalle></app-form-detalle>
-<h2 class="title-result">{{'Resultados de la busqueda' | titlecase}}</h2>
+<h2 class="title-result">{{'Lista de compras' | titlecase}}</h2>
 <app-lista-compras></app-lista-compras>
-<h3>Resumen:</h3>
+
 
 
 <div class="flex-container">
+    <div class="container-text">
+        <h3>Resumen:</h3>
+    </div>
+
     <div class="container-input">
-        <label for="correo">Correo de proveedor:</label>
+        <label for="correo">Correo del proveedor:</label>
         <input type="email" [(ngModel)]="correo">
     </div>
     <table>
