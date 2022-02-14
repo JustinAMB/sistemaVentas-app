@@ -17,10 +17,10 @@ export class SellDetailsService {
     this._details.splice(index, 1);
   }
   get total():number[] {
-    const total=[];
-    total.push( this._details.reduce((total,detail)=>total+detail.priceUnit*detail.quantity,0));
-    total.push(total[0]*0.13);  
-    total.push(total[0]+total[1]);  
+    const total=[0,0,0];
+    total[0]=this._details.reduce((total,detail)=>total+detail.priceUnit*detail.quantity,0);
+    total[1]=(total[0]*0.13);  
+    total[2]=(total[0]+total[1]);  
     return total;
 
   }
