@@ -3,11 +3,12 @@
 <app-lista-compras></app-lista-compras>
 <h3>Resumen:</h3>
 
-<div>
-    <label for="correo">Correo de proveedor:</label>
-    <input type="email" [(ngModel)]="correo">
-</div>
-<div>
+
+<div class="flex-container">
+    <div>
+        <label for="correo">Correo de proveedor:</label>
+        <input type="email" [(ngModel)]="correo">
+    </div>
     <table>
         <tr>
             <td>SubTotal:</td>
@@ -22,6 +23,8 @@
             <td>{{total[2] | currency:'CRC':true}}</td>
         </tr>
     </table>
+    <div class="grid-btn">
+        <button (click)="cancelar()">Cancelar</button>
+        <button (click)="comprar()">Finalizar compra</button>
+    </div>
 </div>
-<button (click)="cancelar()">Cancelar</button>
-<button (click)="comprar()">Finalizar compra</button>
