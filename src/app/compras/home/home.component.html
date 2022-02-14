@@ -1,2 +1,26 @@
 <app-form-detalle></app-form-detalle>
+<h2 class="title-result">{{'Resultados de la busqueda' | titlecase}}</h2>
 <app-lista-compras></app-lista-compras>
+<h3>Resumen:</h3>
+
+<div>
+    <label for="correo">Correo de proveedor:</label>
+    <input type="email" [(ngModel)]="correo">
+</div>
+<div>
+    <table>
+        <tr>
+            <td>SubTotal:</td>
+            <td>{{total[0] | currency:'CRC':true}}</td>
+        </tr>
+        <tr>
+            <td>IVA:</td>
+            <td>{{total[1] | currency:'CRC':true}}</td>
+        </tr>
+        <tr>
+            <td>Total:</td>
+            <td>{{total[2] | currency:'CRC':true}}</td>
+        </tr>
+    </table>
+</div>
+<button (click)="comprar()">Finalizar compra</button>
