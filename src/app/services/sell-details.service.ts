@@ -24,4 +24,7 @@ export class SellDetailsService {
     return total;
 
   }
+  clear(){
+    this._details=[];
+  }
 }
