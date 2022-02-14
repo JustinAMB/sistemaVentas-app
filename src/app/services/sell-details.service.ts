@@ -16,8 +16,12 @@ export class SellDetailsService {
   deleteDetail(index: number) {
     this._details.splice(index, 1);
   }
-  get total():number {
-    return this._details.reduce((total,detail)=>total+detail.priceUnit*detail.quantity,0);
+  get total():number[] {
+    const total=[];
+    total.push( this._details.reduce((total,detail)=>total+detail.priceUnit*detail.quantity,0));
+    total.push(total[0]*0.13);  
+    total.push(total[0]+total[1]);  
+    return total;
 
   }
 }
