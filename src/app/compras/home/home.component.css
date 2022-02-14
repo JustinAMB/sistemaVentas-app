@@ -42,3 +42,22 @@
                         border-color: #05a9be;
                         background-color: #05a9be;
                     }
+                    /**table*/
+                    
+                    table {
+                        table-layout: fixed;
+                        width: 40%;
+                        border-collapse: collapse;
+                    }
+                    
+                    thead {
+                        background-color: #000;
+                        color: #fff;
+                    }
+                    
+                    th,
+                    td {
+                        text-align: center;
+                        padding-block: .5rem;
+                        border: .1rem solid #ccc;
+                    }
