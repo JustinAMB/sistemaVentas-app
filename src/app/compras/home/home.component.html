@@ -12,7 +12,7 @@
     <form class="container-input" [formGroup]="form">
         <label for="correo">Correo del proveedor:</label>
         <input type="email" id="correo" formControlName="correo">
-        <span *ngIf="campoValido('correo')">{{msgCorreoError}}</span>
+        <span *ngIf="campoValido('correo')">{{correoMsgError}}</span>
     </form>
     <table>
         <tr>
@@ -30,6 +30,6 @@
     </table>
     <div class="grid-btn">
         <button (click)="cancelar()">Cancelar</button>
-        <button (click)="comprar()" [disabled]="disable">Finalizar compra</button>
+        <button (click)="comprar()" [disabled]="isDisabled">Finalizar compra</button>
     </div>
 </div>
