@@ -41,10 +41,17 @@ export class HomeComponent implements OnInit {
   }
   comprar(){	
     this.form.markAllAsTouched();
-    if(this.form.valid){
+    if(!this.isDisabled){
       const {correo}=this.form.value;
       this.sellService.addSell(1,this.total[2],correo,this.detailsService.details).subscribe((resp)=>{
-        Swal.fire('Compra realizada','','success');
+        if(resp.ok===true){
+          Swal.fire('Compra realizada','','success');
+        }
+        else
+        {
+          Swal.fire('Error',resp.message,'error');
+        }
+        
   
       });
     }
