@@ -15,19 +15,25 @@ input {
 
 button {
     box-sizing: border-box;
-    padding: 0.5rem 0.3rem;
-    margin-bottom: 0.5rem;
-    border: .1rem solid #000090;
-    border-radius: 0.25rem;
-    background: #000090;
-    color: #fff;
-    height: 2.3rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
     margin-bottom: -0.8rem;
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+i {
+    color: #fff;
+    margin: 0 !important;
+    font-size: 1.5rem;
 }
 
 button:hover {
-    background-color: #6868F2;
-    border-color: #6868F2;
+    background-color: #15152b;
+    border-color: #15152b;
     cursor: pointer;
 }
 
