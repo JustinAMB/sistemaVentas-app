@@ -9,10 +9,11 @@
         <h3>Resumen:</h3>
     </div>
 
-    <div class="container-input">
+    <form class="container-input" [formGroup]="form">
         <label for="correo">Correo del proveedor:</label>
-        <input type="email" [(ngModel)]="correo">
-    </div>
+        <input type="email" id="correo" formControlName="correo">
+        <span *ngIf="campoValido('correo')">{{msgCorreoError}}</span>
+    </form>
     <table>
         <tr>
             <td>SubTotal:</td>
@@ -29,6 +30,6 @@
     </table>
     <div class="grid-btn">
         <button (click)="cancelar()">Cancelar</button>
-        <button (click)="comprar()">Finalizar compra</button>
+        <button (click)="comprar()" [disabled]="disable">Finalizar compra</button>
     </div>
 </div>
