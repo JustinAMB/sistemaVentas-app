@@ -1,0 +1,16 @@
+<h2>Agregar Producto </h2>
+<form [formGroup]="form" (ngSubmit)="add()">
+    <div>
+        <label for="barcode">Codigo de barras:</label>
+        <input type="text" formControlName="barcode" id="barcode" (input)="codigoExiste()">
+        <span *ngIf="campoNoValido('barcode')" class="text-danger">{{barcodeErrorMsg}}</span>
+    </div>
+    <div>
+        <label for="quantity">Cantidad:</label>
+        <input type="number" formControlName="quantity" id="quantity">
+        <span *ngIf="campoNoValido('quantity')" class="text-danger">{{quantityErrorMsg}}</span>
+    </div>
+
+    <button [disabled]="form.invalid" type="submit"><i class="uil uil-plus"></i></button>
+
+</form>
