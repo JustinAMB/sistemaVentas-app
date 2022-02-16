@@ -7,7 +7,7 @@
     </div>
     <div>
         <label for="quantity">Cantidad:</label>
-        <input type="number" formControlName="quantity" id="quantity">
+        <input type="number" formControlName="quantity" id="quantity" (input)="cantidadDisponible()">
         <span *ngIf="campoNoValido('quantity')" class="text-danger">{{quantityErrorMsg}}</span>
     </div>
 
