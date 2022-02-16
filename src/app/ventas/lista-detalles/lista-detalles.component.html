@@ -1,0 +1,27 @@
+<table>
+    <thead>
+        <tr>
+
+
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Total</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let detail of details;let i=index">
+
+            <td>{{detail.name}}</td>
+            <td>{{detail.quantity}}</td>
+            <td>{{detail.priceUnit}}</td>
+            <td>{{detail.priceUnit*detail.quantity}}</td>
+
+            <td>
+
+                <button class="delete" (click)="delete(i)"><i class=" uil uil-trash-alt "></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
