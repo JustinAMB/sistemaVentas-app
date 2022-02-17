@@ -33,22 +33,12 @@ export class FormDetalleComponent implements OnInit {
       return 'Debe ingresar una cantidad';
     } else if(errors?.min){
       return 'La cantidad debe ser mayor a 0';
-    } 
-    return '';
-  }
-  get priceUnitErrorMsg(): string {
-    const errors= this.form.get('priceUnit')?.errors;
-    if(errors?.required){
-      return 'Debe ingresar un precio unitario';
-    } else if(errors?.min){
-      return 'El precio unitario debe ser mayor a 0';
-    }
-    else if(errors?.cantidad){
+    } else if(errors?.cantidad){
       return 'La cantidad ingresada es mayor a la disponible';
     }
-
     return '';
   }
+  
   get barcodeErrorMsg(): string {
     const errors= this.form.get('barcode')?.errors;
     if(errors?.required){
@@ -98,8 +88,9 @@ export class FormDetalleComponent implements OnInit {
   } 
   cantidadDisponible(){
     const quantity=this.form.get('quantity')?.value;
-    
+    console.log('hola');
     if(quantity>=this.productQuantity){
+      console.log('holaError');
       this.form.get('quantity')?.setErrors({cantidad:true});
     }
   }
