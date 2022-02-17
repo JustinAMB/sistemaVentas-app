@@ -47,7 +47,8 @@ export class HomeComponent implements OnInit {
     this.form.markAllAsTouched();
     if(!this.isDisabled){
       const {correo}=this.form.value;
-      this.sellService.addSell(1,this.total[2],correo,this.detailsService.details).subscribe((resp)=>{
+      this.sellService.addSell(-1,this.total[2],correo,this.detailsService.details).subscribe((resp)=>{
+        console.log(resp);
         if(resp.ok===true){
           Swal.fire('Venta realizada','','success');
         }
