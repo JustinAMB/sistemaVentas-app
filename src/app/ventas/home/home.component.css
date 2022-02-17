@@ -46,6 +46,11 @@ button:hover {
     margin-left: .5rem;
 }
 
+.grid-btn button:nth-child(2):disabled {
+    background-color: #045863;
+    border-color: #045863;
+}
+
 
 /**btn success hover*/
 
