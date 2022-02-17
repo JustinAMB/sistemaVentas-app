@@ -47,11 +47,13 @@ export class ViewSellService {
   }
   getDate(fecha:Date):string{
     
-    return fecha.toLocaleDateString();
+    const hoy = new Date(fecha);
+    return hoy.toLocaleString().split(',').join('');
   }
   getInfoProduct(id:number):[string,string]{
     this.productService.getProduct(id).subscribe(resp=>{
       const product=resp.data as Product;
+        console.log (product);
       return [product.barcode,product.name];
     });
     return ['',''];
