@@ -47,6 +47,17 @@ export class SellService {
       delay(1500)
     );
   }
+  getSell(id:number):Observable<Resp>{
+    const url=  `${this.baseUrl}sell/${id}`;
+    return this.http.get<Resp>(url,this.headers).pipe(
+      catchError(err=>{
+        console.log(err);
+        return of(err.error)
+      })  
+
+      
+    );
+  }
 
   
 }
