@@ -40,6 +40,9 @@ const routes: Routes = [
       {
         path:'compras',
         loadChildren:()=>import('../compras/compras.module').then(m=>m.ComprasModule)
+      },{
+        path:'caja',
+        loadChildren:()=>import('../caja/caja.module').then(m=>m.CajaModule)
       },
       
     ]
