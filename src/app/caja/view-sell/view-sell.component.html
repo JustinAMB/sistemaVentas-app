@@ -2,9 +2,10 @@
 </app-spinner>
 
 <ng-template #container>
-    <div class="grid-info">
+    <h2>Informacion de la {{(sell.kind===-1)?'Venta':'Compra'}}</h2>
+    <div class="grid-info ">
         <div>
-            <h3>Cliente</h3>
+            <h3>{{(sell.kind===-1)?'Cliente':'Proveedor'}}</h3>
             <ul>
                 <li>Nombre: {{person.name+' ' +person.lastname}}</li>
                 <li>Correo: {{person.email}}</li>
@@ -21,25 +22,48 @@
             </ul>
         </div>
     </div>
-    <thead>
-        <tr>
+    <table>
+        <thead>
+            <tr>
 
 
-            <th>Codigo</th>
-            <th>Producto</th>
-            <th>Precio</th>
-            <th>Cantidad</th>
-            <th>Total</th>
+                <th>Codigo</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Total</th>
 
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let detail of details">
-            <td>{{detail.barcode}}</td>
-            <td>{{detail.name}}</td>
-            <td>{{detail.priceUnit}}</td>
-            <td>{{detail.quantity}}</td>
-            <td>{{detail.quantity*detail.priceUnit}}</td>
-        </tr>
-    </tbody>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let detail of details">
+                <td>{{detail.barcode}}</td>
+                <td>{{detail.name}}</td>
+                <td>{{detail.priceUnit | currency:'CRC':true}}</td>
+                <td>{{detail.quantity}}</td>
+                <td>{{detail.quantity*detail.priceUnit | currency:'CRC'}}</td>
+            </tr>
+        </tbody>
+
+    </table>
+    <div class="totales">
+        <table>
+            <tr>
+                <td class="bg-blue">SubTotal</td>
+                <td>{{total | currency:'CRC':true}}</td>
+            </tr>
+            <tr>
+                <td class="bg-blue">IVA</td>
+                <td>{{total*0.13 | currency:'CRC':true}}</td>
+            </tr>
+            <tr>
+                <td class="bg-blue">Total</td>
+                <td>{{sell.total | currency:'CRC':true}}</td>
+            </tr>
+
+
+        </table>
+    </div>
+
+
 </ng-template>
