@@ -107,6 +107,11 @@ export class ProductService {
     );
 
   }
+  getInfoProduct(id:number):[string,string]{
+    const product=this.products.find(p=>p.id===id)!;
+    
+    return [product.barcode,product.name];
+  }
 
   
 }
