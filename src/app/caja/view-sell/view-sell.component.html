@@ -1,0 +1,24 @@
+<app-spinner *ngIf="!person; else container">
+</app-spinner>
+
+<ng-template #container>
+    <div class="grid-info">
+        <div>
+            <h3>Cliente</h3>
+            <ul>
+                <li>Nombre: {{person.name+' ' +person.lastname}}</li>
+                <li>Correo: {{person.email}}</li>
+            </ul>
+        </div>
+        <div>
+            <h3>Factura</h3>
+
+            <ul>
+                <li>
+                    N° Factura: {{sell.id }}
+                </li>
+                <li>Fecha: {{getDate(sell.created!)}}</li>
+            </ul>
+        </div>
+    </div>
+</ng-template>

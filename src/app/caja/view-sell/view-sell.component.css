@@ -1,0 +1,24 @@
+.grid-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-inline: 10rem;
+}
+
+h3 {
+    text-align: left;
+    color: #7052ff;
+    border-bottom: .15rem solid #7052ff;
+    ;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    color: #000;
+    padding-block: .5rem;
+    font-weight: bold;
+}
