@@ -2,6 +2,9 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+}
+
+.container {
     margin-inline: 10rem;
 }
 
@@ -21,4 +24,52 @@ li {
     color: #000;
     padding-block: .5rem;
     font-weight: bold;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border-bottom: .25rem solid #7052ff;
+}
+
+thead {
+    background-color: #7052ff;
+    color: #fff;
+}
+
+th,
+td {
+    text-align: center;
+    padding-block: .3rem;
+}
+
+.totales {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.totales table {
+    table-layout: fixed;
+    width: 15%;
+    border-collapse: collapse;
+    border: none;
+}
+
+.totales thead {
+    background-color: #000;
+    color: #fff;
+}
+
+.totales table tr td {
+    text-align: right;
+    padding-block: .5rem;
+    border-bottom: .1rem solid #7052ff;
+    padding-inline: .5rem;
+}
+
+.bg-blue {
+    background-color: #7052ff;
+    color: #fff;
 }
