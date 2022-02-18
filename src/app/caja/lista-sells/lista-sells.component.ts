@@ -21,7 +21,7 @@ export class ListaSellsComponent implements OnInit {
 
   }
   ver(id:number):void {
-    this.router.navigate(['/caja/ver-detalle',id]);
+    this.router.navigate(['/sistema/caja/ver-detalle',id]);
   }
   getDate(fecha:Date):string{
     
