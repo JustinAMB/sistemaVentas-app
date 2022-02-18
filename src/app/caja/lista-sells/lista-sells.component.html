@@ -1,0 +1,26 @@
+<app-spinner *ngIf="load">
+</app-spinner>
+<table *ngIf="!load">
+    <thead>
+        <tr>
+
+
+            <th>Total</th>
+            <th>Operacion</th>
+            <th>Fecha</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let sell of sells">
+            <td>{{sell.total}}</td>
+            <td>
+                <div class="kind" [ngClass]="{'bg-red':sell.kind===1,'bg-green':sell.kind===-1}">{{(sell.kind===1)?'Compra':'Venta'}}</div>
+            </td>
+            <td>{{getDate(sell.created!)}}</td>
+            <td>
+                <button class="delete " (click)="ver(sell.id!) ">ver detalle</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

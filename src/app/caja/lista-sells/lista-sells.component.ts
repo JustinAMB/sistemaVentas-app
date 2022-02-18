@@ -23,5 +23,9 @@ export class ListaSellsComponent implements OnInit {
   ver(id:number):void {
     this.router.navigate(['/caja/ver-detalle',id]);
   }
-
+  getDate(fecha:Date):string{
+    
+    const hoy = new Date(fecha);
+    return hoy.toLocaleString().split(',').join('');
+  }
 }
