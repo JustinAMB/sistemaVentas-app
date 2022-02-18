@@ -42,4 +42,7 @@ export class ViewSellComponent implements OnInit {
     const hoy = new Date(fecha);
     return hoy.toLocaleString().split(',').join('');
   }
+  get total():number{
+    return this.details.reduce((acc,curr)=>acc+curr.priceUnit*curr.quantity,0);
+  }
 }
