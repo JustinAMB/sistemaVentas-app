@@ -26,7 +26,7 @@ export class ViewSellService {
     pdf.create().print();
   }
   extractData(details:SellDetail[]):TableRow[]{
-    return details.map((detail:SellDetail)=>[...this.getInfoProduct(detail.product),detail.priceUnit,detail.quantity,detail.priceUnit*detail.quantity]);
+    return details.map((detail:SellDetail)=>[...this.productService.getInfoProduct(detail.product),detail.priceUnit,detail.quantity,detail.priceUnit*detail.quantity]);
   }
   createTable(details:SellDetail[]):ITable{
     return new Table(
@@ -50,12 +50,5 @@ export class ViewSellService {
     const hoy = new Date(fecha);
     return hoy.toLocaleString().split(',').join('');
   }
-  getInfoProduct(id:number):[string,string]{
-    this.productService.getProduct(id).subscribe(resp=>{
-      const product=resp.data as Product;
-        console.log (product);
-      return [product.barcode,product.name];
-    });
-    return ['',''];
-  }
+  
 }
