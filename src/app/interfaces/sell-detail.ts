@@ -5,4 +5,5 @@ export interface SellDetail {
     priceUnit :number;
     quantity:number;
     name?:string;
+    barcode?:string;
 }
