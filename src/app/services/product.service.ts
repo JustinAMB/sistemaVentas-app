@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { catchError, delay } from 'rxjs/operators';
+import { catchError, delay, tap } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 import { Product } from '../interfaces/product';
 import { Resp } from '../interfaces/resp';
@@ -12,7 +12,10 @@ import { Resp } from '../interfaces/resp';
 export class ProductService {
 
   private baseUrl:string=environment.api;
-  constructor(private http:HttpClient) { }
+  products!:Product[];
+  constructor(private http:HttpClient) {
+    this.getProducts().subscribe();
+   }
   
 
 
@@ -76,6 +79,12 @@ export class ProductService {
   getProducts(state:boolean=true):Observable<Resp> {
     const url=`${this.baseUrl}product/?is_active=${state}`; 
     return this.http.get<Resp>(url,this.headers).pipe(
+      tap(resp=>{
+        if(resp.ok===true){
+          this.products=resp.data;
+        }
+       
+      }),
       catchError(err=>{
         console.log(err);
         return of(err.error)
@@ -98,4 +107,6 @@ export class ProductService {
     );
 
   }
+
+  
 }
