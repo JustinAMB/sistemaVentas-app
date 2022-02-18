@@ -5,6 +5,7 @@ import { Person } from 'src/app/interfaces/person';
 import { Sell } from 'src/app/interfaces/sell';
 import { SellDetail } from 'src/app/interfaces/sell-detail';
 import { PersonService } from 'src/app/services/person.service';
+import { ProductService } from 'src/app/services/product.service';
 import { SellService } from 'src/app/services/sell.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class ViewSellComponent implements OnInit {
   details!:SellDetail[];
   person!:Person;
   sell!:Sell;
-  constructor(private sellService: SellService,private activatedRoute: ActivatedRoute,private personService: PersonService) { }
+  constructor(private productS:ProductService,private sellService: SellService,private activatedRoute: ActivatedRoute,private personService: PersonService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.pipe(
@@ -24,6 +25,11 @@ export class ViewSellComponent implements OnInit {
     ).subscribe(resp=>{
       this.sell=resp.data.sell ;
       this.details=resp.data.details;
+      this.details.forEach((detail,index)=>{
+        const data=this.productS.getInfoProduct(detail.product);
+        this.details[index].name=data[1];
+        this.details[index].barcode=data[0];
+      });
       this.personService.getPerson(this.sell.person!).subscribe(resp=>{
         this.person=resp.data;
       });
