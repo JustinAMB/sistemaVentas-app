@@ -59,8 +59,9 @@ export class SellService {
     );
   }
   getSellsByDay():Observable<Resp>{
-    const url=  `${this.baseUrl}sellsDay/`;
+    const url=  `${this.baseUrl}sell/sellsDay/`;
     return this.http.get<Resp>(url,this.headers).pipe(
+      delay(1100),
       catchError(err=>{
         console.log(err);
         return of(err.error)
