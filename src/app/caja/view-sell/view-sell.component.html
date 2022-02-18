@@ -21,4 +21,25 @@
             </ul>
         </div>
     </div>
+    <thead>
+        <tr>
+
+
+            <th>Codigo</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let detail of details">
+            <td>{{detail.barcode}}</td>
+            <td>{{detail.name}}</td>
+            <td>{{detail.priceUnit}}</td>
+            <td>{{detail.quantity}}</td>
+            <td>{{detail.quantity*detail.priceUnit}}</td>
+        </tr>
+    </tbody>
 </ng-template>
