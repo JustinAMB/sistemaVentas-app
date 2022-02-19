@@ -46,11 +46,11 @@ export class ReportsComponent implements OnInit {
     },
     {
       title:'Total compras',
-      icon:'uil uil-list-alt'
+      icon:'uil uil-invoice'
     },
     {
       title:'Total de Ganancias',
-      icon:'uil uil-money-bill-alt'
+      icon:'uil uil-dollar-alt'
     }
   ]
 }
