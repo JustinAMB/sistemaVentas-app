@@ -1,1 +1,10 @@
-<p>reports works!</p>
+<div class="grid-reports">
+    <div *ngFor="let report of reports;let i=index" class="report">
+        <i [class]="info[i].icon"></i>
+        <div class="info">
+            <h3>{{info[i].title}}</h3>
+            <p>{{report}}</p>
+        </div>
+
+    </div>
+</div>
