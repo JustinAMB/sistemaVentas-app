@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from '../guards/auth.guard';
 import { PagesComponent } from './pages/pages.component';
+import { ReportsComponent } from './reports/reports.component';
 
 const routes: Routes = [
   {
@@ -10,6 +11,10 @@ const routes: Routes = [
     canLoad: [ AuthGuard ],
     component:PagesComponent,
     children:[
+      {
+        path:'',
+        component:ReportsComponent
+      },
       {
         path:'productos',
         loadChildren:()=>import('../productos/productos.module').then(m=>m.ProductosModule) 
