@@ -11,11 +11,13 @@ type TableRow=[string,string,string];
 })
 export class HomeComponent implements OnInit {
   users!:User[];
+  load:boolean=true;
   constructor(private userService: UserService) { }
 
   ngOnInit(): void {
     this.userService.getUsers(true).subscribe(resp=>{
       this.users=resp.data;
+      this.load=false;
     });
   }
   imprimir(){
@@ -62,4 +64,4 @@ export class HomeComponent implements OnInit {
   getRol(rol :number):string{
     return (rol===1) ?'Admin':'Empleado';
   }
-}
+} 
