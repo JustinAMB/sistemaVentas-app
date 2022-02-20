@@ -6,5 +6,6 @@
         <button (click)="imprimir()">Imprimir</button>
     </div>
 </div>
-<app-lista-productos>
+<app-spinner *ngIf="load"></app-spinner>
+<app-lista-productos *ngIf="!load">
 </app-lista-productos>
