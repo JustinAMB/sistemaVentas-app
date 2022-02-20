@@ -11,14 +11,15 @@ type TableRow=[string,string,string,string];
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  persons!:PersonData[];
+  load:boolean=true;
+  persons!:Person[];
   constructor(private personService:PersonService) { }
 
   ngOnInit(): void {
     this.personService.getPersons(-1,true).subscribe(resp=>{
       if(resp.ok===true) {
-        this.persons=resp.data.map(({name,lastname,address,phone,email}:Person)=>({name:name+' '+lastname,address,phone,email}));
+        this.persons=resp.data;
+        this.load=false;
       }
     });
     
@@ -55,8 +56,8 @@ export class HomeComponent implements OnInit {
     ).alignment('center').margin([25,25]).end;
   }
 
-  extractData(data:PersonData[]):TableRow[]{
-    return data.map((person:PersonData)=>[person.name,person.email,person.phone,person.address]);
+  extractData(data:Person[]):TableRow[]{
+    return data.map((person:Person)=>[person.name+' '+person.lastname,person.email,person.phone,person.address]);
   }
 
   getDate():string{
