@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Category } from 'src/app/interfaces/category';
 import { Product } from 'src/app/interfaces/product';
@@ -11,8 +11,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./lista-productos.component.css']
 })
 export class ListaProductosComponent implements OnInit {
-  products!:Product[];
-  load:boolean=true;
+  @Input() products!:Product[];
+ 
   categorias!:Category[];
   constructor(private router:Router,private productService:ProductService,private categoryService:CategoryService) { }
   getCategoria(id:number):string{
@@ -30,20 +30,7 @@ export class ListaProductosComponent implements OnInit {
         this.categorias=resp.data;
       }
     );
-    this.productService.getProducts().subscribe(resp=>{
-      if(resp.ok===true){
-        this.products=resp.data as Product[];
-        this.load=false;
-      }else{
-        this.load=false;
-        Swal.fire({
-          icon:'error',
-          title:'Error',
-          text:'Hubo un error al cargar los productos'
-        });
-        
-      }
-    });
+    
 
 
     
