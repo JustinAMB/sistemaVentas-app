@@ -12,11 +12,13 @@ type TableRow=[string,string,number,number];
 
 export class ProductosComponent implements OnInit {
   products!:Product[];
+  load:boolean=true;
   constructor(private productService:ProductService) { }
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe(resp=>{
       this.products=resp.data;
+      this.load=false;
     });
   }
 
