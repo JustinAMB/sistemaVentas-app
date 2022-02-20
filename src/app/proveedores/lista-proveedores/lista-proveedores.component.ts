@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Person } from 'src/app/interfaces/person';
@@ -11,26 +11,12 @@ import Swal from 'sweetalert2';
   styleUrls: ['./lista-proveedores.component.css']
 })
 export class ListaProveedoresComponent implements OnInit {
-  proveedores!:Person[] ;
-  load:boolean=true;
+  @Input() proveedores!:Person[] ;
+  
   constructor(private router:Router, private personService:PersonService) { }
 
   ngOnInit(): void {
-    this.personService.getPersons(1).subscribe(resp=>{
-      if(resp.ok===true){
-        this.proveedores=resp.data as Person[];
-        this.load=false;
-      }else{
-        this.load=false;
-        Swal.fire({
-          icon:'error',
-          title:'Error',
-          text:'Hubo un error al cargar los proveedores'
-        });
-        
-      }
-    });
-
+    
 
   }
   edit(id:number){
