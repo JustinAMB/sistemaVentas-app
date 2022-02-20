@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Report } from 'src/app/interfaces/report';
 import { ReportsService } from 'src/app/services/reports.service';
 
 @Component({
@@ -8,11 +9,15 @@ import { ReportsService } from 'src/app/services/reports.service';
 })
 export class ReportsComponent implements OnInit {
   reports!:number[];
+  load:boolean=true;
+  productsTop!:Report[];
   constructor(private reportsService: ReportsService) { }
 
   ngOnInit(): void {
     this.reportsService.getReports().subscribe(resp=>{
       this.reports=resp.data.reports;
+      this.productsTop=resp.data.sellFav;
+      this.load=false;
     });
   }
   info=[
