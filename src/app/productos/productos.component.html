@@ -7,5 +7,5 @@
     </div>
 </div>
 <app-spinner *ngIf="load"></app-spinner>
-<app-lista-productos *ngIf="!load">
+<app-lista-productos [products]="products" *ngIf="!load">
 </app-lista-productos>
