@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Person } from 'src/app/interfaces/person';
 import { PersonService } from 'src/app/services/person.service';
@@ -10,25 +10,12 @@ import Swal from 'sweetalert2';
 })
 export class ListaClienteComponent implements OnInit {
 
-  clientes!:Person[] ;
-  load:boolean=true;
+  @Input() clientes!:Person[] ;
+
   constructor(private router:Router, private personService:PersonService) { }
 
   ngOnInit(): void {
-    this.personService.getPersons(-1).subscribe(resp=>{
-      if(resp.ok===true){
-        this.clientes=resp.data as Person[];
-        this.load=false;
-      }else{
-        this.load=false;
-        Swal.fire({
-          icon:'error',
-          title:'Error',
-          text:'Hubo un error al cargar los clientes'
-        });
-        
-      }
-    });
+    
 
 
   }
