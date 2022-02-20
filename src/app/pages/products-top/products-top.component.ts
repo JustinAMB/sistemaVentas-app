@@ -9,17 +9,20 @@ import { Report } from 'src/app/interfaces/report';
   styleUrls: ['./products-top.component.css']
 })
 export class ProductsTopComponent implements OnInit {
-  @Input() products!:Report[];
+  @Input() products:Report[]=[];
   constructor() { }
 
 
   ngOnInit(): void {
+    console.log(this.products);
+    this.doughnutChartLabels = this.names;
+        this.doughnutChartData.push( this.quantitys );
   }
   
   
-  public doughnutChartLabels: Label[] = this.names;
+  public doughnutChartLabels: Label[] = [];
   public doughnutChartData: MultiDataSet = [
-    this.quantitys
+    
   ];
   public doughnutChartType: ChartType = 'doughnut';
 
@@ -30,14 +33,15 @@ export class ProductsTopComponent implements OnInit {
         '#00BAF7',
         '#00E0DB',
         '#00F7AD',
-        '#00ED63',
+        '#00ED63'
+        
       ]
     }
   ]
   get  names():string[]{
-    return this.products.map(p=>p.name!);
+    return this.products.map(p=>p.name!) ||['','','','','',''];
   }
   get  quantitys():number[]{
-    return this.products.map(p=>p.quantity);
+    return this.products.map(p=>p.quantity) || [0,0,0,0,0];
   }
 }
