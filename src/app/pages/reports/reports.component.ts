@@ -11,51 +11,18 @@ export class ReportsComponent implements OnInit {
   reports!:number[];
   load:boolean=true;
   productsTop!:Report[];
+  categories!:Report[];
+  sells!:Report[];
   constructor(private reportsService: ReportsService) { }
 
   ngOnInit(): void {
     this.reportsService.getReports().subscribe(resp=>{
       this.reports=resp.data.reports;
       this.productsTop=resp.data.sellFav;
+      this.categories=resp.data.productXcategory;
+      this.sells=resp.data.sellDay;
       this.load=false;
     });
   }
-  info=[
-    {
-      title:'N° de Categorias',
-      icon:'uil uil-label'
-    },
-    {
-      title:'N° de Clientes',
-      icon:'uil uil-users-alt'
-    },
-    {
-      title:'N° de Proveedores',
-      icon:'uil uil-truck'
-    },
-    {
-      title:'N° de Empleados',
-      icon:'uil uil-user-md'
-    },
-    {
-      title:'N° de Productos',
-      icon:'uil uil-cube'
-    },
-    {
-      title:'Stock bajo',
-      icon:'uil uil-comparison'
-    },
-    {
-      title:'Total de Ventas',
-      icon:'uil uil-shopping-cart'
-    },
-    {
-      title:'Total compras',
-      icon:'uil uil-invoice'
-    },
-    {
-      title:'Total de Ganancias',
-      icon:'uil uil-dollar-alt'
-    }
-  ]
+  
 }
