@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ChartType, } from 'chart.js';
+import { ChartOptions, ChartType, } from 'chart.js';
 
 import { Color, Label, MultiDataSet } from 'ng2-charts';
 import { Report } from 'src/app/interfaces/report';
@@ -11,7 +11,10 @@ import { Report } from 'src/app/interfaces/report';
 export class ProductsTopComponent implements OnInit {
   @Input() products:Report[]=[];
   constructor() { }
-
+  public chartOptions: ChartOptions = {
+    responsive: true,
+   
+  };
 
   ngOnInit(): void {
     console.log(this.products);
