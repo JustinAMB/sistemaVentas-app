@@ -80,6 +80,7 @@ export class FormDetalleComponent implements OnInit {
       if(rs){
         this.product=rs.id;
         this.name=rs.name;
+        this.form.get('barcode')?.setErrors({code:false});
       }else{
         this.form.get('barcode')?.setErrors({code:true});
       }
