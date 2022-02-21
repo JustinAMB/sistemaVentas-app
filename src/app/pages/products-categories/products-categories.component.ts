@@ -16,7 +16,7 @@ export class ProductsCategoriesComponent implements OnInit {
   @Input() products:Report[]=[];
   
   public chartOptions: ChartOptions = {
-    responsive: true,
+  
   };
 
   ngOnInit(): void {
@@ -24,7 +24,30 @@ export class ProductsCategoriesComponent implements OnInit {
     this.chartLabels = this.names;
         this.chartData=[
           { data: this.quantitys, label: 'Series A', backgroundColor: '#ED5F76', hoverBackgroundColor: 'red'}
-        ]
+        ];
+
+        this.chartOptions= {
+          responsive: true,
+          scales: {
+            xAxes: [{
+              
+              gridLines: {
+                  display: true,
+                  z:5,
+                  drawBorder:true
+      
+              },
+              ticks: {
+                  min: 0,
+                  max: this.quantitys[0]+1,
+                  stepSize: .5,
+                  beginAtZero: true
+                  
+      
+              }
+          }],
+          }
+        };
   }
   
   
@@ -32,7 +55,7 @@ export class ProductsCategoriesComponent implements OnInit {
   public chartData: ChartDataSets[] = [
     
   ];
-  public chartType: ChartType = 'bar';
+  public chartType: ChartType = 'horizontalBar';
 
   
   get  names():string[]{
