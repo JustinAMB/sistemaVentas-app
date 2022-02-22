@@ -11,3 +11,9 @@ header {
     display: flex;
     min-width: 100%;
 }
+
+img {
+    max-width: 8rem;
+    max-height: 20rem;
+    display: block;
+}
