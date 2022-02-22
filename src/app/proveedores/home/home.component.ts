@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ITable, PdfMakeWrapper, Table, Txt } from 'pdfmake-wrapper';
 import * as pdfFonts from "pdfmake/build/vfs_fonts"; // fonts provided for pdfmake
 import { Person } from 'src/app/interfaces/person';
-import { PersonData } from 'src/app/interfaces/person-data';
+
 import { PersonService } from 'src/app/services/person.service';
 type TableRow=[string,string,string,string];
 @Component({

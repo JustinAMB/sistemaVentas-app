@@ -18,6 +18,7 @@ table {
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
+    border-bottom: .2rem solid #000;
 }
 
 thead {

@@ -6,11 +6,14 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {
     path: '',
-    component:HomeComponent
-  },{
+    component:HomeComponent,
+    data: { titulo: 'ProgressBar' }
+  },
+  {
     path:'editar-categoria/:id',
     component:FormCategoryComponent
-  },{
+  },
+  {
     path:'agregar-categoria',
     component:FormCategoryComponent
   }

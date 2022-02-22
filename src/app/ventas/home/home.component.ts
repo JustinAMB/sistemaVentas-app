@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SellDetailsService } from 'src/app/services/sell-details.service';
 import { SellService } from 'src/app/services/sell.service';
+import { ViewSellService } from 'src/app/services/view-sell.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -19,6 +20,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private sellService:SellService,
     private detailsService:SellDetailsService,
+    private viewSell:ViewSellService,
     private fb:FormBuilder) { }
 
   ngOnInit(): void {
@@ -50,7 +52,7 @@ export class HomeComponent implements OnInit {
       this.sellService.addSell(-1,this.total[2],correo,this.detailsService.details).subscribe((resp)=>{
         console.log(resp);
         if(resp.ok===true){
-          Swal.fire('Venta realizada','','success');
+          this.viewSell.imprimir(resp.data.sell,resp.data.details);
         }
         else
         {
