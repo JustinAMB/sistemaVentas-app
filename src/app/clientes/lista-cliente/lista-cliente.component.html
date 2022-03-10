@@ -11,7 +11,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let cliente of clientes | paginate :{itemsPerPage:2,currentPage:current}">
+        <tr *ngFor="let cliente of clientes | paginate :{itemsPerPage:10,currentPage:current}">
 
             <td>{{cliente.name+' '+cliente.lastname}}</td>
             <td>{{cliente.email}}</td>
