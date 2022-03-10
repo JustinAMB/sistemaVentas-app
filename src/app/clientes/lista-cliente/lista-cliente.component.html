@@ -1,6 +1,6 @@
-<table>
+<table class="table ">
 
-    <thead>
+    <thead class="table-dark">
         <tr>
 
             <th>Nombre</th>
@@ -11,16 +11,17 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let cliente of clientes">
+        <tr *ngFor="let cliente of clientes | paginate :{itemsPerPage:2,currentPage:current}">
 
             <td>{{cliente.name+' '+cliente.lastname}}</td>
             <td>{{cliente.email}}</td>
             <td>{{cliente.address}}</td>
             <td>{{cliente.phone}}</td>
             <td>
-                <button class="edit" (click)="edit(cliente.id!)">Editar</button>
-                <button class="delete" (click)="delete(cliente.id!)">Eliminar</button>
+                <button class="btn btn-success btn-sm  " (click)="edit(cliente.id!)">Editar</button>
+                <button class="btn btn-danger  btn-sm ms-1" (click)="delete(cliente.id!)">Eliminar</button>
             </td>
         </tr>
     </tbody>
 </table>
+<pagination-controls (pageChange)="current=$event"></pagination-controls>

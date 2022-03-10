@@ -9,6 +9,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./lista-cliente.component.css']
 })
 export class ListaClienteComponent implements OnInit {
+  current:number=1;
 
   @Input() clientes!:Person[] ;
 
