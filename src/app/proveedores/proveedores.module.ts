@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ProveedoresRoutingModule } from './proveedores-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ListaProveedoresComponent } from './lista-proveedores/lista-proveedores.component';
@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
+    NgxPaginationModule ,
     ReactiveFormsModule,
     SharedModule,
     ProveedoresRoutingModule
