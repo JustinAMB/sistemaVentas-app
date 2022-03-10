@@ -1,6 +1,6 @@
-<table>
+<table class="table">
 
-    <thead>
+    <thead class="table-dark">
         <tr>
 
             <th>Codigo</th>
@@ -11,7 +11,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let producto of productos">
+        <tr *ngFor="let producto of productos | paginate :{itemsPerPage:10,currentPage:current}">
             <td>{{producto.barcode}}</td>
             <td>{{producto.name}}</td>
             <td>{{producto.price}}</td>
@@ -20,3 +20,4 @@
         </tr>
     </tbody>
 </table>
+<pagination-controls (pageChange)="current=$event "></pagination-controls>

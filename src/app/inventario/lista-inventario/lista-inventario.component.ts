@@ -8,6 +8,7 @@ import { Product } from 'src/app/interfaces/product';
 })
 export class ListaInventarioComponent implements OnInit {
   @Input() productos!: Product[];
+  current:number=1;
   constructor() { }
 
   ngOnInit(): void {
