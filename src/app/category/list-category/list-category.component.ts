@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
 })
 export class ListCategoryComponent implements OnInit {
   categorys:Category[]=[];
+  current:number=1;
   load:boolean =true;;
   constructor(private categoryService:CategoryService,private router:Router) { }
 
