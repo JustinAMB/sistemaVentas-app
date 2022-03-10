@@ -7,7 +7,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { FormClienteComponent } from './form-cliente/form-cliente.component';
 import { ListaClienteComponent } from './lista-cliente/lista-cliente.component';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -18,6 +18,7 @@ import { ListaClienteComponent } from './lista-cliente/lista-cliente.component';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    NgxPaginationModule,
     SharedModule,
     ClientesRoutingModule
   ]
