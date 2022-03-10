@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class ListaProveedoresComponent implements OnInit {
   @Input() proveedores!:Person[] ;
+  current:number=10;
   
   constructor(private router:Router, private personService:PersonService) { }
 

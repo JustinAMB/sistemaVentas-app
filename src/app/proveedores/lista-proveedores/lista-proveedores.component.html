@@ -1,6 +1,6 @@
-<table>
+<table class="table">
 
-    <thead>
+    <thead class="table-dark">
         <tr>
 
             <th>Nombre</th>
@@ -11,24 +11,18 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let proveedor of proveedores;let i=index">
+        <tr *ngFor="let proveedor of proveedores | paginate :{itemsPerPage:10,currentPage:current};let i=index">
 
             <td>{{proveedor.name+' '+proveedor.lastname}}</td>
             <td>{{proveedor.email}}</td>
             <td>{{proveedor.address}}</td>
             <td>{{proveedor.phone}}</td>
             <td>
-                <button class="edit" (click)="edit(proveedor.id!)">Editar</button>
-                <button class="delete" (click)="delete(proveedor.id!)">Eliminar</button>
+                <button class="btn btn-sm btn-success " (click)="edit(proveedor.id!)">Editar</button>
+                <button class="btn btn-sm btn-danger ms-1" (click)="delete(proveedor.id!)">Eliminar</button>
             </td>
         </tr>
     </tbody>
 
-    <tfoot>
-        <tr class="foot">
-            <td colspan="5">
-                Proveedores
-            </td>
-        </tr>
-    </tfoot>
+    <pagination-controls (pageChange)="current=$event "></pagination-controls>
 </table>
