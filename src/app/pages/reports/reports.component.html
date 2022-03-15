@@ -1,8 +1,11 @@
 <app-spinner *ngIf="load"></app-spinner>
 <div class="grid-general" *ngIf="!load">
+
+
     <div class="card">
-        <app-sell-days [products]="sells"></app-sell-days>
+        <app-products-top [products]="productsTop"></app-products-top>
     </div>
+
     <div class="card">
         <app-reports-general [reports]="reports"></app-reports-general>
     </div>
@@ -12,9 +15,8 @@
         <app-products-categories [products]="categories"></app-products-categories>
     </div>
     <div class="card">
-        <app-products-top [products]="productsTop"></app-products-top>
+        <app-sell-days [products]="sells"></app-sell-days>
     </div>
-
 
 
 

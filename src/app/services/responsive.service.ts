@@ -4,6 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ResponsiveService {
-  navbar:boolean=true;
+  navbar:boolean=false;
   constructor() { }
 }

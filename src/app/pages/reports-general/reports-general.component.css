@@ -7,12 +7,14 @@
 .report {
     padding: .1rem .3rem;
     background-color: #e6e3e3;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     align-items: center;
+    box-sizing: border-box;
 }
 
 i {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .grid-reports .report:nth-child(1) div {
@@ -52,14 +54,31 @@ i {
 }
 
 p {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
 .info {
     margin-left: .3rem;
+    box-sizing: border-box;
 }
 
 .info p,
 h3 {
     margin-block: .3rem;
+}
+
+h3 {
+    font-size: .8em;
+}
+
+@media screen and (max-width: 990px) {
+    .grid-reports {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .grid-reports {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

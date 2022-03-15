@@ -23,7 +23,7 @@ export class ProductsCategoriesComponent implements OnInit {
     console.log(this.products);
     this.chartLabels = this.names;
         this.chartData=[
-          { data: this.quantitys, label: 'Series A', backgroundColor: '#ED5F76', hoverBackgroundColor: 'red'}
+          { data: this.quantitys, label: 'Categorias', backgroundColor: '#ED5F76', hoverBackgroundColor: 'red'}
         ];
 
         this.chartOptions= {

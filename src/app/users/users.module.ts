@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 import { UsersRoutingModule } from './users-routing.module';
 import { HomeComponent } from './home/home.component';
 import { FormUserComponent } from './form-user/form-user.component';
@@ -19,6 +19,7 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     CommonModule,
     ReactiveFormsModule,
+    NgxPaginationModule,
     SharedModule,
     PipesModule,
     UsersRoutingModule

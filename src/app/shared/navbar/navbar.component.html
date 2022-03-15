@@ -1,10 +1,9 @@
 <nav>
-    <div>
-        <button id="toggle" (click)="cambiarNavbar()">
-            <i class="uil uil-bars"></i>
-        </button>
-    </div>
+
     <ul>
+        <li> <button id="toggle" (click)="cambiarNavbar()">
+            <i class="uil uil-bars"></i>
+        </button></li>
         <li><a href="index.html" [ngClass]="{'d-inline':navbar&&tam}">Home</a><i class="uil uil-briefcase-alt"></i></li>
         <li><a href="about.html" [ngClass]="{'d-inline':navbar&&tam}">About</a><i class="uil uil-calculator-alt"></i></li>
         <li><a href="contact.html" [ngClass]="{'d-inline':navbar&&tam}">Contact</a><i class="uil uil-chart-growth"></i></li>
