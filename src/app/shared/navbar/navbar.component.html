@@ -1,14 +1,14 @@
 <nav>
     <div>
-        <button id="toggle">
+        <button id="toggle" (click)="cambiarNavbar()">
             <i class="uil uil-bars"></i>
         </button>
     </div>
     <ul>
-        <li><a href="index.html">Home</a><i class="uil uil-briefcase-alt"></i></li>
-        <li><a href="about.html">About</a><i class="uil uil-calculator-alt"></i></li>
-        <li><a href="contact.html">Contact</a><i class="uil uil-chart-growth"></i></li>
-        <li><a href="login.html">Login</a><i class="uil uil-calendar-alt"></i></li>
-        <li><a href="register.html">Register</a><i class="uil uil-chart-pie-alt"></i></li>
+        <li><a href="index.html" [ngClass]="{'d-inline':navbar&&tam}">Home</a><i class="uil uil-briefcase-alt"></i></li>
+        <li><a href="about.html" [ngClass]="{'d-inline':navbar&&tam}">About</a><i class="uil uil-calculator-alt"></i></li>
+        <li><a href="contact.html" [ngClass]="{'d-inline':navbar&&tam}">Contact</a><i class="uil uil-chart-growth"></i></li>
+        <li><a href="login.html" [ngClass]="{'d-inline':navbar&&tam}">Login</a><i class="uil uil-calendar-alt"></i></li>
+        <li><a href="register.html" [ngClass]="{'d-inline':navbar&&tam}">Register</a><i class="uil uil-chart-pie-alt"></i></li>
     </ul>
 </nav>
