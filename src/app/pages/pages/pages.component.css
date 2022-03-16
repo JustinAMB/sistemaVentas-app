@@ -9,7 +9,7 @@ app-navbar {
 
 .main {
     grid-column: 3 / 13;
-    background-color: #c9c1c1;
+    background-color: #E3E3E3;
 }
 
 @media screen and (max-width: 768px) {
