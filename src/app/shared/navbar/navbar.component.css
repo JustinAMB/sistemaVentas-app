@@ -5,16 +5,33 @@ nav {
 }
 
 ul {
+    margin-block: .5rem;
     list-style-type: none;
+    position: fixed;
+    height: 100%;
     padding: 0;
+    z-index: 300;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+ul::-webkit-scrollbar {
+    display: none;
+}
+
+ul {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 li {
     padding: 1rem;
+    margin-right: .5rem;
 }
 
 li:hover {
-    background-color: #c9c1c1;
+    background-color: #faf2f2e1;
+    cursor: pointer;
 }
 
 a {
@@ -34,5 +51,8 @@ a {
     }
     a {
         display: none
+    }
+    a {
+        font-size: .7rem;
     }
 }

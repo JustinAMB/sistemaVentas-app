@@ -1,13 +1,11 @@
 <nav>
 
     <ul>
-        <li> <button id="toggle" (click)="cambiarNavbar()">
+        <li id="toggle"> <button (click)="cambiarNavbar()">
             <i class="uil uil-bars"></i>
         </button></li>
-        <li><a href="index.html" [ngClass]="{'d-inline':navbar&&tam}">Home</a><i class="uil uil-briefcase-alt"></i></li>
-        <li><a href="about.html" [ngClass]="{'d-inline':navbar&&tam}">About</a><i class="uil uil-calculator-alt"></i></li>
-        <li><a href="contact.html" [ngClass]="{'d-inline':navbar&&tam}">Contact</a><i class="uil uil-chart-growth"></i></li>
-        <li><a href="login.html" [ngClass]="{'d-inline':navbar&&tam}">Login</a><i class="uil uil-calendar-alt"></i></li>
-        <li><a href="register.html" [ngClass]="{'d-inline':navbar&&tam}">Register</a><i class="uil uil-chart-pie-alt"></i></li>
+        <li *ngFor="let item of items" (click)="navegar(item.route)">
+            <i [class]="item.icon "></i> <a [ngClass]=" { 'd-inline':navbar&&tam} ">{{item.name}}</a></li>
+
     </ul>
 </nav>
