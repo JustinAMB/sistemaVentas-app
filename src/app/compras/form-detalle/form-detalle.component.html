@@ -2,12 +2,12 @@
 <form [formGroup]="form" (ngSubmit)="add()">
 
 
-    <div class="labels">
+    <div class="grid">
         <label for="barcode">Codigo de barras:</label>
         <label for="quantity">Cantidad:</label>
         <label for="priceUnit">Precio Unitario:</label>
     </div>
-    <div class="inputs">
+    <div class="grid">
         <input type="text" formControlName="barcode" id="barcode" (input)="codigoExiste()">
         <input type="number" formControlName="quantity" id="quantity">
         <input type="number" formControlName="priceUnit" id="priceUnit">
@@ -16,7 +16,7 @@
         </button>
 
     </div>
-    <div class="alerts">
+    <div class="grid">
         <span *ngIf="campoNoValido('barcode')" class="text-danger">{{barcodeErrorMsg}}</span>
         <span *ngIf="campoNoValido('quantity')" class="text-danger">{{quantityErrorMsg}}</span>
         <span *ngIf="campoNoValido('priceUnit')" class="text-danger">{{priceUnitErrorMsg}}</span>
