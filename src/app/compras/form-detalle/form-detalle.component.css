@@ -41,6 +41,8 @@ button:hover {
     color: #ff0000;
 }
 
+
+/*
 form {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
@@ -63,3 +65,5 @@ form div:nth-child(3) {
 form button {
     grid-column: 7 / 8;
 }
+
+*/
