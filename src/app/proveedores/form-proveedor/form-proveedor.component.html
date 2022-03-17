@@ -1,5 +1,5 @@
 <form [formGroup]="form" (ngSubmit)="save()">
-
+    <h2>{{id ? 'Actualizar':'Agregar'}} proveedores</h2>
 
     <div>
         <label for="name">Nombre:</label>
@@ -28,5 +28,5 @@
     </div>
 
 
-    <button [disabled]="form.invalid" type="submit"> {{id ? 'Actualizar':'Agregar'}} proveedor </button>
+    <button [disabled]="form.invalid" type="submit" class="btn"> {{id ? 'Actualizar':'Agregar'}} proveedor </button>
 </form>
