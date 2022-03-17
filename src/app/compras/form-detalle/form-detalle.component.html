@@ -17,9 +17,17 @@
 
     </div>
     <div class="grid">
-        <span *ngIf="campoNoValido('barcode')" class="text-danger">{{barcodeErrorMsg}}</span>
-        <span *ngIf="campoNoValido('quantity')" class="text-danger">{{quantityErrorMsg}}</span>
-        <span *ngIf="campoNoValido('priceUnit')" class="text-danger">{{priceUnitErrorMsg}}</span>
+        <div>
+            <span *ngIf="campoNoValido('barcode')" class="text-danger">{{barcodeErrorMsg}}</span>
+        </div>
+        <div>
+            <span *ngIf="campoNoValido('quantity')" class="text-danger">{{quantityErrorMsg}}</span>
+        </div>
+
+        <div>
+            <span *ngIf="campoNoValido('priceUnit')" class="text-danger">{{priceUnitErrorMsg}}</span>
+        </div>
+
     </div>
 
 </form>
