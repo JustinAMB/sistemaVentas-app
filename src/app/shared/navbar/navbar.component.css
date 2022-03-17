@@ -10,7 +10,7 @@
         margin-block: .5rem;
         list-style-type: none;
         position: fixed;
-        height: 100%;
+        height: 100vh;
         padding: 0;
         z-index: 300;
         overflow: hidden;
@@ -37,7 +37,11 @@
     
     a {
         text-decoration: none;
-        color: black;
+        color: #DEEFE7 !important;
+    }
+    
+    i {
+        color: #B4BEC9 !important;
     }
     
     #toggle {
@@ -57,15 +61,18 @@
             display: block;
         }
         a {
-            display: none
-        }
-        a {
+            display: none;
             font-size: .7rem;
         }
     }
     
     .active {
         /*border-left: .2rem solid rgb(20, 48, 124);*/
-        box-shadow: inset .5rem 0 0 0 rgb(20, 48, 124);
-        color: rgb(20, 48, 124);
+        box-shadow: inset .5rem 0 0 0 #159A9C;
+        color: #159A9C;
+    }
+    
+    .active a,
+    .active i {
+        color: #159A9C !important;
     }
