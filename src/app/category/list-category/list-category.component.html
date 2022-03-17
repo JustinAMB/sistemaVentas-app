@@ -1,22 +1,26 @@
 <app-spinner *ngIf="load"></app-spinner>
-<table *ngIf="!load" class="table">
 
-    <thead class="table-dark">
-        <tr>
-            <th>N°</th>
-            <th>Nombre</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let category of categorys | paginate :{itemsPerPage:10,currentPage:current};let i=index">
-            <td>{{i+1}}</td>
-            <td>{{category.name}}</td>
-            <td>
-                <button class="btn  btn-success btn-sm  " (click)="edit(category.id!)">Editar</button>
-                <button class="btn btn-success btn-sm  ms-1" (click)="delete(category.id!)">Eliminar</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<pagination-controls (pageChange)="current=$event"></pagination-controls>
+
+<div *ngIf="!load" class="table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm container">
+    <table class="table">
+
+        <thead class="table-dark">
+            <tr>
+                <th>N°</th>
+                <th>Nombre</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let category of categorys | paginate :{itemsPerPage:10,currentPage:current};let i=index">
+                <td>{{i+1}}</td>
+                <td>{{category.name}}</td>
+                <td>
+                    <button class="btn  btn-success btn-sm  " (click)="edit(category.id!)">Editar</button>
+                    <button class="btn btn-danger btn-sm  ms-1" (click)="delete(category.id!)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="current=$event"></pagination-controls>
+</div>
