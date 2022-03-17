@@ -50,13 +50,13 @@ button:hover {
 }
 
 @media screen and (max-width: 768px) {
-    .labels label {
+    .grid label {
         font-size: .8rem;
     }
 }
 
 @media screen and (max-width: 468px) {
-    .labels label {
+    .grid label {
         font-size: .6rem;
     }
 }
