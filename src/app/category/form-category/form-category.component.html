@@ -9,5 +9,5 @@
         <span *ngIf="campoNoValido('name')" class="text-danger">{{nameErrorMsg}}</span>
     </div>
 
-    <button [disabled]="form.invalid" type="submit"> {{id ? 'Actualizar':'Agregar'}} categoria</button>
+    <button [disabled]="form.invalid" type="submit" class="btn"> {{id ? 'Actualizar':'Agregar'}} categoria</button>
 </form>
