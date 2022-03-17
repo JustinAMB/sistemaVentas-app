@@ -56,29 +56,16 @@ input {
 }
 
 button {
-    margin-top: .5rem;
-    padding: .5rem .8rem;
-    background-color: rgb(14, 18, 243);
-    color: #fff;
-    border: .1rem solid rgb(14, 18, 243);
-    border-radius: .3rem;
-    outline: none;
+    background-image: linear-gradient(to right, #1A2980 0%, #26D0CE 51%, #1A2980 100%);
+    color: #DEEFE7;
+    transition: 0.5s;
 }
 
 button:hover {
+    background-position: right center;
+    color: #DEEFE7;
+    text-decoration: none;
     cursor: pointer;
-}
-
-button:disabled {
-    cursor: not-allowed;
-    pointer-events: none;
-    opacity: .5;
-}
-
-button:hover:disabled {
-    cursor: not-allowed;
-    pointer-events: none;
-    background-color: #ccc;
 }
 
 select {
