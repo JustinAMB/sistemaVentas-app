@@ -70,7 +70,15 @@ export class NavBarComponent implements OnInit {
     this.responsive.navbar=!this.responsive.navbar;
   }
   isRouteActive(route:string):boolean{
-    return this.router.isActive(route,true);
+    const active=`${window.location.origin+route}`;
+    console.log(`${active}    es igual al url(${window.location.href}) actual ${active===this.router.url}`);
+    if(active===window.location.href){
+      return true;
+    }if(route!=='/sistema'){
+      return window.location.href.includes(active);
+    }
+    return false;
+      
     
   }
 
