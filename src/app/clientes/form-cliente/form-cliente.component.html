@@ -1,6 +1,6 @@
 <form [formGroup]="form" (ngSubmit)="save()">
 
-
+    <h2>{{id ? 'Actualizar':'Agregar'}} cliente</h2>
     <div>
         <label for="name">Nombre:</label>
         <input type="text" id="name" formControlName="name" />
@@ -28,5 +28,5 @@
     </div>
 
 
-    <button [disabled]="form.invalid" type="submit"> {{id ? 'Actualizar':'Agregar'}} cliente </button>
+    <button [disabled]="form.invalid" type="submit" class="btn"> {{id ? 'Actualizar':'Agregar'}} cliente </button>
 </form>
