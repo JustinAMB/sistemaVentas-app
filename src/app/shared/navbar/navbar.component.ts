@@ -11,46 +11,46 @@ export class NavBarComponent implements OnInit {
   items=[
     {
       name:"Inicio",
-      route:"/",
+      route:"/sistema",
       icon:'uil uil-house-user'
     },
     {
       name:"Ventas",
-      route:"/ventas",
+      route:"/sistema/ventas",
       icon:'uil uil-shopping-cart'
     },{
       name:"Caja",
-      route:"/caja",
-      icon:'uil uil-cash-register'
+      route:"/sistema/caja",
+      icon:'uil uil-dollar-alt'
     },{
       name:"Compras",
-      route:"/compras",
+      route:"/sistema/compras",
       icon:'uil uil-invoice'
     },{
       name:"Categorias",
-      route:"/categorias",
+      route:"/sistema/categorias",
       icon:'uil uil-label'
     },{
       name:"Productos",
-      route:"/productos",
+      route:"/sistema/productos",
       icon:'uil uil-cube'
     },{
       name:"Proveedores",
-      route:"/proveedores",
+      route:"/sistema/proveedores",
       icon:'uil uil-truck'
     },
     {
       name:"Clientes",
-      route:"/clientes",
+      route:"/sistema/clientes",
       icon:'uil uil-users-alt'
     },{
       name:"Inventario",
-      route:"/inventario",
+      route:"/sistema/inventario",
       icon:'uil uil-comparison'
     },
     {
       name:"Usuarios",
-      route:"/usuarios",
+      route:"/sistema/usuarios",
       icon:'uil uil-user-md'
     }
 
@@ -64,12 +64,15 @@ export class NavBarComponent implements OnInit {
   }
 
   navegar(route:string){
-    this.router.navigate(['/sistema/'+route]);
+    this.router.navigate([route]);
   }
   cambiarNavbar(){
     this.responsive.navbar=!this.responsive.navbar;
   }
-
+  isRouteActive(route:string):boolean{
+    return this.router.isActive(route,true);
+    
+  }
 
   get tam():boolean{
     if(window.innerWidth>=768){

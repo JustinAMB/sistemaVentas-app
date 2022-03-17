@@ -1,58 +1,72 @@
-nav {
+    /*nav {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-ul {
-    margin-block: .5rem;
-    list-style-type: none;
-    position: fixed;
-    height: 100%;
-    padding: 0;
-    z-index: 300;
-    overflow: hidden;
-    overflow-y: scroll;
-}
-
-ul::-webkit-scrollbar {
-    display: none;
-}
-
-ul {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-li {
-    padding: 1rem;
-    margin-right: .5rem;
-}
-
-li:hover {
-    background-color: #faf2f2e1;
-    cursor: pointer;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-#toggle {
-    display: none;
-    background-color: transparent;
-    border: none;
-}
-
-@media screen and (max-width: 768px) {
+*/
+    
+    ul {
+        margin-block: .5rem;
+        list-style-type: none;
+        position: fixed;
+        height: 100%;
+        padding: 0;
+        z-index: 300;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+    
+    ul::-webkit-scrollbar {
+        display: none;
+    }
+    
+    ul {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    
+    li {
+        padding: 1rem;
+        padding-right: 1.5rem;
+    }
+    
+    li:hover {
+        background-color: #faf2f2e1;
+        cursor: pointer;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    
     #toggle {
-        display: block;
+        display: none;
+        background-color: transparent;
+        border: none;
     }
-    a {
-        display: none
+    
+    #toggle button {
+        background-color: transparent;
+        border: none;
+        padding: 0;
     }
-    a {
-        font-size: .7rem;
+    
+    @media screen and (max-width: 768px) {
+        #toggle {
+            display: block;
+        }
+        a {
+            display: none
+        }
+        a {
+            font-size: .7rem;
+        }
     }
-}
+    
+    .active {
+        /*border-left: .2rem solid rgb(20, 48, 124);*/
+        box-shadow: inset .5rem 0 0 0 rgb(20, 48, 124);
+        color: rgb(20, 48, 124);
+    }
