@@ -71,7 +71,7 @@ export class NavBarComponent implements OnInit {
   }
   isRouteActive(route:string):boolean{
     const active=`${window.location.origin+route}`;
-    console.log(`${active}    es igual al url(${window.location.href}) actual ${active===this.router.url}`);
+  
     if(active===window.location.href){
       return true;
     }if(route!=='/sistema'){
