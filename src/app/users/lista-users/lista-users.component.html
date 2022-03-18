@@ -1,27 +1,29 @@
-<table>
+<div class="table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm container">
+    <table class="table">
 
-    <thead>
-        <tr>
+        <thead class="table-dark">
+            <tr>
 
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Rol</th>
-            <th>Foto</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let user of users">
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Foto</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
 
-            <td>{{user.name+' '+user.lastname}}</td>
-            <td>{{user.email}}</td>
-            <td>{{user.rol}}</td>
-            <td><img [src]="user.image! | imagen:'users'" alt=" "></td>
-            <td>
-                <button class="edit" (click)="edit(user.id!)">Editar</button>
-                <button class="delete" (click)="delete(user.id!)">Eliminar</button>
-            </td>
-        </tr>
-    </tbody>
+                <td>{{user.name+' '+user.lastname}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.rol}}</td>
+                <td><img [src]="user.image! | imagen:'users'" alt=" "></td>
+                <td>
+                    <button class="edit" (click)="edit(user.id!)">Editar</button>
+                    <button class="delete" (click)="delete(user.id!)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
 
-</table>
+    </table>
+</div>
