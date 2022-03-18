@@ -1,23 +1,25 @@
-<table class="table">
+<div class="table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm container">
+    <table class="table">
 
-    <thead class="table-dark">
-        <tr>
+        <thead class="table-dark">
+            <tr>
 
-            <th>Codigo</th>
-            <th>Nombre</th>
-            <th>Precio unitario</th>
-            <th>Unidad</th>
-            <th>Stock</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let producto of productos | paginate :{itemsPerPage:10,currentPage:current}">
-            <td>{{producto.barcode}}</td>
-            <td>{{producto.name}}</td>
-            <td>{{producto.price}}</td>
-            <td>{{producto.unit}}</td>
-            <td>{{producto.inventary}}</td>
-        </tr>
-    </tbody>
-</table>
-<pagination-controls (pageChange)="current=$event "></pagination-controls>
+                <th>Codigo</th>
+                <th>Nombre</th>
+                <th>Precio unitario</th>
+                <th>Unidad</th>
+                <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let producto of productos | paginate :{itemsPerPage:10,currentPage:current}">
+                <td>{{producto.barcode}}</td>
+                <td>{{producto.name}}</td>
+                <td>{{producto.price}}</td>
+                <td>{{producto.unit}}</td>
+                <td>{{producto.inventary}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="current=$event "></pagination-controls>
+</div>
