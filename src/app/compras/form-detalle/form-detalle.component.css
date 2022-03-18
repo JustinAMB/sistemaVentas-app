@@ -16,8 +16,8 @@ button {
     box-sizing: border-box;
     width: 3rem;
     height: 3rem;
-    border-radius: 50%;
-    background-color: #000;
+    /*border-radius: 50%;
+    */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -26,17 +26,21 @@ button {
 
 button p {
     font-size: 1.5rem;
-    color: #fff;
+    color: rgb(24, 22, 22);
     margin: 0;
     width: 16px;
     height: 38px;
 }
 
+
+/*
 button:hover {
     background-color: #15152b;
     border-color: #15152b;
     cursor: pointer;
 }
+
+*/
 
 .text-danger {
     color: #ff0000;
