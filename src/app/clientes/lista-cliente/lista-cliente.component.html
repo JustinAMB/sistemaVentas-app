@@ -1,27 +1,29 @@
-<table class="table ">
+<div class="table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm container">
+    <table class="table ">
 
-    <thead class="table-dark">
-        <tr>
+        <thead class="table-dark">
+            <tr>
 
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Direccion</th>
-            <th>Telefono</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let cliente of clientes | paginate :{itemsPerPage:10,currentPage:current}">
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let cliente of clientes | paginate :{itemsPerPage:10,currentPage:current}">
 
-            <td>{{cliente.name+' '+cliente.lastname}}</td>
-            <td>{{cliente.email}}</td>
-            <td>{{cliente.address}}</td>
-            <td>{{cliente.phone}}</td>
-            <td>
-                <button class="btn btn-success btn-sm  " (click)="edit(cliente.id!)">Editar</button>
-                <button class="btn btn-danger  btn-sm ms-1" (click)="delete(cliente.id!)">Eliminar</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<pagination-controls (pageChange)="current=$event"></pagination-controls>
+                <td>{{cliente.name+' '+cliente.lastname}}</td>
+                <td>{{cliente.email}}</td>
+                <td>{{cliente.address}}</td>
+                <td>{{cliente.phone}}</td>
+                <td>
+                    <button class="btn btn-success btn-sm  " (click)="edit(cliente.id!)">Editar</button>
+                    <button class="btn btn-danger  btn-sm ms-1" (click)="delete(cliente.id!)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="current=$event"></pagination-controls>
+</div>
