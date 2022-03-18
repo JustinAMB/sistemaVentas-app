@@ -1,28 +1,32 @@
-<table class="table">
+<div class="table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm container">
+    <table class="table">
 
-    <thead class="table-dark">
-        <tr>
+        <thead class="table-dark">
+            <tr>
 
-            <th>Nombre</th>
-            <th>Email</th>
-            <th>Direccion</th>
-            <th>Telefono</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let proveedor of proveedores | paginate :{itemsPerPage:10,currentPage:current};let i=index">
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let proveedor of proveedores | paginate :{itemsPerPage:10,currentPage:current};let i=index">
 
-            <td>{{proveedor.name+' '+proveedor.lastname}}</td>
-            <td>{{proveedor.email}}</td>
-            <td>{{proveedor.address}}</td>
-            <td>{{proveedor.phone}}</td>
-            <td>
-                <button class="btn btn-sm btn-success " (click)="edit(proveedor.id!)">Editar</button>
-                <button class="btn btn-sm btn-danger ms-1" (click)="delete(proveedor.id!)">Eliminar</button>
-            </td>
-        </tr>
-    </tbody>
+                <td>{{proveedor.name+' '+proveedor.lastname}}</td>
+                <td>{{proveedor.email}}</td>
+                <td>{{proveedor.address}}</td>
+                <td>{{proveedor.phone}}</td>
+                <td>
+                    <button class="btn btn-sm btn-success " (click)="edit(proveedor.id!)">Editar</button>
+                    <button class="btn btn-sm btn-danger ms-1" (click)="delete(proveedor.id!)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
 
-    <pagination-controls (pageChange)="current=$event "></pagination-controls>
-</table>
+        <pagination-controls (pageChange)="current=$event "></pagination-controls>
+    </table>
+
+
+</div>
