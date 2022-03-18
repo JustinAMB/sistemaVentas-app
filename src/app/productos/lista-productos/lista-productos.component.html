@@ -1,30 +1,32 @@
-<table>
+<div class="table-responsive-xl table-responsive-lg table-responsive-md table-responsive-sm container">
+    <table class="table">
 
-    <thead>
-        <tr>
-            <th>Codigo</th>
-            <th>Imagen</th>
-            <th>Nombre</th>
-            <th>Precio</th>
-            <th>Categoria</th>
-            <th>Cantidad Minima</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let product of products;let i=index">
-            <td>{{product.barcode}}</td>
-            <td>
-                <img [src]="product.image! | imagen:'products'" alt=" ">
-            </td>
-            <td>{{product.name}}</td>
-            <td>{{product.price}}</td>
-            <td>{{getCategoria(product.category)}}</td>
-            <td>{{product. inventary_min}}</td>
-            <td>
-                <button class="edit " (click)="edit(product.id!) "><i class="uil uil-edit "></i></button>
-                <button class="delete " (click)="delete(product.id!) "><i class="uil uil-trash-alt "></i></button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+        <thead class="table-dark">
+            <tr>
+                <th>Codigo</th>
+                <th>Imagen</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Categoria</th>
+                <th>Cantidad Minima</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of products;let i=index">
+                <td>{{product.barcode}}</td>
+                <td>
+                    <img [src]="product.image! | imagen:'products'" alt=" ">
+                </td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td>{{getCategoria(product.category)}}</td>
+                <td>{{product. inventary_min}}</td>
+                <td>
+                    <button class="edit " (click)="edit(product.id!) "><i class="uil uil-edit "></i></button>
+                    <button class="delete " (click)="delete(product.id!) "><i class="uil uil-trash-alt "></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
