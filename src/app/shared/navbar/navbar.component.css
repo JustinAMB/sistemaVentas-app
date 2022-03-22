@@ -7,7 +7,8 @@ ul {
     overflow-y: scroll;
     top: 0;
     left: 0;
-    background-color: #333;
+    background-color: #002333;
+    ;
     height: 100%;
     width: calc((100%/15)*2);
 }
@@ -116,4 +117,13 @@ i {
 
 .responsive ul li a {
     display: inline;
+}
+
+.container-logo img {
+    max-width: 100%;
+    display: block;
+}
+
+.container-logo {
+    padding: 0;
 }

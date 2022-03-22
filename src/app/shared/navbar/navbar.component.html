@@ -1,9 +1,17 @@
 <nav [ngClass]=" { 'responsive':navbar&&tam} ">
 
+
     <ul>
         <li id="toggle"> <button (click)="cambiarNavbar()">
             <i class="uil uil-bars"></i>
         </button></li>
+
+        <li class="container-logo">
+            <a (click)="navegar(' /sistema')">
+                <img src="../../../assets/images/LOGO.png" alt="">
+            </a>
+
+        </li>
         <li *ngFor="let item of items" (click)="navegar(item.route)" [ngClass]="{'active':isRouteActive(item.route)}">
             <i [class]="item.icon "></i> <a>{{item.name}}</a></li>
 
