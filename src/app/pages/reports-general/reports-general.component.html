@@ -1,10 +1,10 @@
-<div class="grid-reports card">
+<div class="grid-reports ">
     <div *ngFor="let report of reports;let i=index" class="report">
         <i [class]="info[i].icon"></i>
-        <div class="info">
-            <h3>{{info[i].title}}</h3>
-            <p>{{report}}</p>
-        </div>
+
+        <h3>{{info[i].title}}</h3>
+        <p>{{report}}</p>
+
 
     </div>
 </div>
