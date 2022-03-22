@@ -3,9 +3,13 @@
         grid-template-columns: repeat(15, 1fr);
     }
     
+    .width {
+        width: 95%;
+    }
+    
     app-navbar {
         grid-column: 1 /3;
-        background-color: #002333;
+        background-color: transparent;
     }
     
     .main {
