@@ -83,9 +83,6 @@ export class NavBarComponent implements OnInit {
   }
 
   get tam():boolean{
-    if(window.innerWidth>=768){
-      this.cambiarNavbar();
-    }
-    return window.innerWidth<768;
+    return this.responsive.tam;
   }
 }
