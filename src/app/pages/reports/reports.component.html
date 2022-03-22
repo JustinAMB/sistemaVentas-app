@@ -1,20 +1,21 @@
 <app-spinner *ngIf="load"></app-spinner>
+
 <div class="grid-general" *ngIf="!load">
 
 
-    <div class="card">
+    <div class="grid-body">
         <app-products-top [products]="productsTop"></app-products-top>
     </div>
 
-    <div class="card">
+    <div class="grid-body">
         <app-reports-general [reports]="reports"></app-reports-general>
     </div>
 
 
-    <div class="card">
+    <div class="grid-body">
         <app-products-categories [products]="categories"></app-products-categories>
     </div>
-    <div class="card">
+    <div class="grid-body">
         <app-sell-days [products]="sells"></app-sell-days>
     </div>
 
