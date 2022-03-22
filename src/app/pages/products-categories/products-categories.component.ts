@@ -20,7 +20,7 @@ export class ProductsCategoriesComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    console.log(this.products);
+    
     this.chartLabels = this.names;
         this.chartData=[
           { data: this.quantitys, label: 'Categorias', backgroundColor: '#ED5F76', hoverBackgroundColor: 'red'}

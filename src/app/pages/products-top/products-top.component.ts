@@ -17,7 +17,7 @@ export class ProductsTopComponent implements OnInit {
   };
 
   ngOnInit(): void {
-    console.log(this.products);
+    
     this.doughnutChartLabels = this.names;
         this.doughnutChartData.push( this.quantitys );
   }
