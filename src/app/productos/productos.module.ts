@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ProductosRoutingModule } from './productos-routing.module';
 import { ProductosComponent } from './productos.component';
 import { ListaProductosComponent } from './lista-productos/lista-productos.component';
@@ -18,7 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    SharedModule,
+    SharedModule,NgxPaginationModule ,
     PipesModule,
     ReactiveFormsModule,
     ProductosRoutingModule
