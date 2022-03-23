@@ -13,7 +13,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let product of products;let i=index">
+            <tr *ngFor="let product of products| paginate :{itemsPerPage:10,currentPage:current};let i=index">
                 <td>{{product.barcode}}</td>
                 <td>
                     <img [src]="product.image! | imagen:'products'" alt=" ">
@@ -23,10 +23,11 @@
                 <td>{{getCategoria(product.category)}}</td>
                 <td>{{product. inventary_min}}</td>
                 <td>
-                    <button class="edit " (click)="edit(product.id!) "><i class="uil uil-edit "></i></button>
-                    <button class="delete " (click)="delete(product.id!) "><i class="uil uil-trash-alt "></i></button>
+                    <button class="btn btn-success btn-sm " (click)="edit(product.id!) "><i class="uil uil-edit "></i></button>
+                    <button class="btn-success btn-sm ms-1" (click)="delete(product.id!) "><i class="uil uil-trash-alt "></i></button>
                 </td>
             </tr>
         </tbody>
     </table>
+    <pagination-controls (pageChange)="current=$event "></pagination-controls>
 </div>

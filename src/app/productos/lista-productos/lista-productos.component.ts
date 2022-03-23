@@ -12,7 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class ListaProductosComponent implements OnInit {
   @Input() products!:Product[];
- 
+  current:number=1;
   categorias!:Category[];
   constructor(private router:Router,private productService:ProductService,private categoryService:CategoryService) { }
   getCategoria(id:number):string{
