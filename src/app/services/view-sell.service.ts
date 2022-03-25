@@ -6,6 +6,7 @@ import * as pdfFonts from "pdfmake/build/vfs_fonts";
 import { Product } from '../interfaces/product';
 import { ProductService } from './product.service';
 type TableRow=[string,string,number,number,number];
+type TableRowTotales=[string,number]
 @Injectable({
   providedIn: 'root'
 })
@@ -16,13 +17,24 @@ export class ViewSellService {
     PdfMakeWrapper.setFonts(pdfFonts);
 
     const pdf = new PdfMakeWrapper();
-    const fecha = new Txt(this.getDate(sell.created!)).alignment('right').end;
-    const title=new Txt('Venta N°'+sell.id).alignment('center').bold().margin([50,50,50,0]).fontSize(18).end
+    pdf.defaultStyle({
+      
+      fontSize: 10,
+    });
+    const  title=new Txt('Factura').alignment('center').bold().margin([0,10,0,10]).end;
+    const fecha = new Txt(`Fecha: ${this.getDate(sell.created!)}`).alignment('left').margin([ 2,2,2,2]).end;
+    const factura=new Txt(`Factura: ${sell.id}`).alignment('left').margin([ 2,2,2,2]).end;
+    const separador=new Txt(`------------------------------------------------------------------------------`).end;
+    pdf.pageSize('A6');
+    pdf.add(title)
     pdf.add(fecha);
-    pdf.add(title);
+    pdf.add(factura);
+    pdf.add(separador);
+    const iva=sell.total*0.13;
+    const totales=this.createTableTotales(iva,sell.total,iva+sell.total);
     pdf.add(this.
       createTable(details));
-
+      pdf.add(totales);  
     pdf.create().print();
   }
   extractData(details:SellDetail[]):TableRow[]{
@@ -43,12 +55,32 @@ export class ViewSellService {
         },
         
       }
-    ).alignment('center').margin([90,20,0,0]).end;
+    ).alignment('center').end;
   }
   getDate(fecha:Date):string{
     
     const hoy = new Date(fecha);
     return hoy.toLocaleString().split(',').join('');
   }
+
+  createTableTotales(iva:number,subtotal:number,total:number):ITable{
+    
+    return new Table(
+      [
+          ['SubTotal', subtotal],
+          ['Iva', iva],
+          ['Total', total],
+      ]
+    ).layout(
+      {
+        fillColor:(rowIndex:number | undefined,node:any,columnIndex:number | undefined):string =>{
+          const row:number=Number(""+rowIndex);
+          return (row%2==0) ? '#CCCCCC' : '';
+        },
+        
+      }
+    ).alignment('center').end;
+  }
+
   
 }

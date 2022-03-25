@@ -14,7 +14,13 @@ export class ProductService {
   private baseUrl:string=environment.api;
   products!:Product[];
   constructor(private http:HttpClient) {
-    this.getProducts().subscribe();
+    this.getProducts().subscribe(
+      (resp)=>{
+        if(resp.ok===true){
+          this.products=resp.data as Product[];
+        }
+      }
+    )
    }
   
 
@@ -90,7 +96,7 @@ export class ProductService {
         return of(err.error)
       })  ,
 
-      delay(1500)
+      
     );
 
   }
