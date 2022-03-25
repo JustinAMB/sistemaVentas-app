@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ProductService } from 'src/app/services/product.service';
 import { SellDetailsService } from 'src/app/services/sell-details.service';
 import { SellService } from 'src/app/services/sell.service';
 import { ViewSellService } from 'src/app/services/view-sell.service';
@@ -21,7 +22,9 @@ export class HomeComponent implements OnInit {
     private sellService:SellService,
     private detailsService:SellDetailsService,
     private viewSell:ViewSellService,
-    private fb:FormBuilder) { }
+    private product:ProductService,
+    private fb:FormBuilder,
+    ) { }
 
   ngOnInit(): void {
   }
