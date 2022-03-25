@@ -7,6 +7,7 @@ import { SellDetail } from 'src/app/interfaces/sell-detail';
 import { PersonService } from 'src/app/services/person.service';
 import { ProductService } from 'src/app/services/product.service';
 import { SellService } from 'src/app/services/sell.service';
+import { ViewSellService } from 'src/app/services/view-sell.service';
 
 @Component({
   selector: 'app-view-sell',
@@ -17,7 +18,7 @@ export class ViewSellComponent implements OnInit {
   details!:SellDetail[];
   person!:Person;
   sell!:Sell;
-  constructor(private productS:ProductService,private sellService: SellService,private activatedRoute: ActivatedRoute,private personService: PersonService) { }
+  constructor(private productS:ProductService,private sellService: SellService,private activatedRoute: ActivatedRoute,private personService: PersonService,private viewSell:ViewSellService) { }
 
   ngOnInit(): void {
     this.activatedRoute.params.pipe(
@@ -44,5 +45,8 @@ export class ViewSellComponent implements OnInit {
   }
   get total():number{
     return this.details.reduce((acc,curr)=>acc+curr.priceUnit*curr.quantity,0);
+  }
+  imprimir(){
+    this.viewSell.imprimir(this.sell,this.details);
   }
 }

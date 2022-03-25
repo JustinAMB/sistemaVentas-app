@@ -47,6 +47,7 @@
 
     </table>
     <div class="totales">
+
         <table>
             <tr>
                 <td class="bg-blue">SubTotal</td>
@@ -63,7 +64,9 @@
 
 
         </table>
+
     </div>
+    <button (click)="imprimir()" class="btn btn-primary" *ngIf="sell.kind===-1">Imprimir</button>
 
 
 </ng-template>

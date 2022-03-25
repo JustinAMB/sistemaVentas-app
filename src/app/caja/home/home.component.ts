@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { SellDetailsService } from 'src/app/services/sell-details.service';
+import { SellService } from 'src/app/services/sell.service';
 
 @Component({
   selector: 'app-home',
@@ -11,5 +13,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+  imprimir(){}
 
 }
