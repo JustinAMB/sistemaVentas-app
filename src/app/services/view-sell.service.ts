@@ -30,11 +30,17 @@ export class ViewSellService {
     pdf.add(fecha);
     pdf.add(factura);
     pdf.add(separador);
-    const iva=sell.total*0.13;
-    const totales=this.createTableTotales(iva,sell.total,iva+sell.total);
+    const subtotal=sell.total/1.13;
+   
+    const subtotalLabel=new Txt(`SubTotal: ${this.myRound(subtotal,2)}`).alignment('right').margin([ 2,2,2,2]).end;
+    const iva=new Txt(`Iva: ${this.myRound(sell.total-subtotal,2)}`).alignment('right').margin([ 2,2,2,2]).end;
+    const total=new Txt(`Total: ${this.myRound(sell.total,2)}`).alignment('right').margin([ 2,2,2,2]).end;
+    
     pdf.add(this.
       createTable(details));
-      pdf.add(totales);  
+      pdf.add(subtotalLabel);  
+      pdf.add(iva);  
+      pdf.add(total);  
     pdf.create().print();
   }
   extractData(details:SellDetail[]):TableRow[]{
@@ -63,24 +69,10 @@ export class ViewSellService {
     return hoy.toLocaleString().split(',').join('');
   }
 
-  createTableTotales(iva:number,subtotal:number,total:number):ITable{
-    
-    return new Table(
-      [
-          ['SubTotal', subtotal],
-          ['Iva', iva],
-          ['Total', total],
-      ]
-    ).layout(
-      {
-        fillColor:(rowIndex:number | undefined,node:any,columnIndex:number | undefined):string =>{
-          const row:number=Number(""+rowIndex);
-          return (row%2==0) ? '#CCCCCC' : '';
-        },
-        
-      }
-    ).alignment('center').end;
-  }
-
   
+
+   myRound(num:number, dec:number) :number{
+    const exp = Math.pow(10, dec || 2); // 2 decimales por defecto
+    return parseInt(`${num*exp}`, 10) / exp;
+  }
 }

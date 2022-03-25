@@ -12,7 +12,7 @@ import { Resp } from '../interfaces/resp';
 export class ProductService {
 
   private baseUrl:string=environment.api;
-  products!:Product[];
+  products:Product[]=[];
   constructor(private http:HttpClient) {
     this.getProducts().subscribe(
       (resp)=>{
