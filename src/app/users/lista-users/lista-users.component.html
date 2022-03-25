@@ -12,18 +12,18 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let user of users">
+            <tr *ngFor="let user of users | paginate :{itemsPerPage:10,currentPage:current}">
 
                 <td>{{user.name+' '+user.lastname}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.rol}}</td>
                 <td><img [src]="user.image! | imagen:'users'" alt=" "></td>
                 <td>
-                    <button class="edit" (click)="edit(user.id!)">Editar</button>
-                    <button class="delete" (click)="delete(user.id!)">Eliminar</button>
+                    <button class="btn btn-success btn-sm " (click)="edit(user.id!)">Editar</button>
+                    <button class="btn btn-danger btn-sm ms-1" (click)="delete(user.id!)">Eliminar</button>
                 </td>
             </tr>
         </tbody>
-
     </table>
+    <pagination-controls (pageChange)="current=$event "></pagination-controls>
 </div>

@@ -11,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class ListaUsersComponent implements OnInit {
   @Input() users!:User[];
- 
+  current:number=1 ;
   constructor(private router:Router, private  userService:UserService) { }
 
   ngOnInit(): void {
