@@ -13,6 +13,8 @@ ul {
     width: calc((100%/15)*2);
 }
 
+
+/*
 ul::-webkit-scrollbar {
     display: none;
 }
@@ -21,6 +23,8 @@ ul {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }
+
+*/
 
 li {
     padding: 1rem;
